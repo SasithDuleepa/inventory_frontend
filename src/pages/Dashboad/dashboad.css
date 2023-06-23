@@ -1,0 +1,87 @@
+.Dashboad{
+    position: fixed;
+   
+}
+
+.dashboad-title{
+    text-align: center;
+}
+.dashboad-summery{
+    background-color: aqua;
+    width: 90%;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 25px 25px 0 0 ;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.dashboad-summery-item-1{
+    height: 100px;
+    width: 25%;
+    background-color:transparent;
+    margin: 1 auto;
+    display: flex;
+    justify-content: space-evenly;
+    
+    
+}
+.team-img{
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+
+.dashboad-summery-item-2{
+    height: 100px;
+    width: 25%;
+    background-color: transparent;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.catergory-img{
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+.dashboad-summery-item-3{
+    height: 100px;
+    width: 25%;
+    background-color: transparent;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-img{
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+.dashboad-summery-item-4{
+    height: 100px;
+    width: 25%;
+    background-color: transparent;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+.order-img{
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+
+
+.section-2{
+    display: flex;
+    justify-content: space-evenly;
+}
+.section-3{
+    display: flex;
+    justify-content: space-evenly;
+}
+.section-4{
+    display: flex;
+    justify-content: space-evenly;
+}

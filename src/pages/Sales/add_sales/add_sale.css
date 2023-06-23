@@ -1,0 +1,18 @@
+.label_product{
+    color: rgb(13, 13, 12);
+}
+.sales_main{
+    background-color: aqua;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.sales_left{}
+.sales_right{}
+
+
+
+.input_product{
+    color: antiquewhite;
+    border: 2px solid black;
+}

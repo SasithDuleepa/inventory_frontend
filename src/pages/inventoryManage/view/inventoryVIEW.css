@@ -1,0 +1,19 @@
+.inventory-view-title{
+     text-align: center;
+}
+.inventory-view-container{
+   
+    background-color: aqua;
+    margin: 10px 100px 10px 100px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.inventory-view{
+    
+    background-color: antiquewhite;
+    width: 70%;
+    margin: 30px auto 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    
+}

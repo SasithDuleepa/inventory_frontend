@@ -1,0 +1,71 @@
+.add{
+    background-color: aqua;
+    margin: 10px 100px 10px 100px;
+    padding: 20px;
+    border-radius: 10px;
+    display: block;
+}
+.add_title{
+    text-align: center;
+}
+.main_set{
+    display: flex;
+    justify-content: space-evenly;
+}
+label{
+    font-family: 'Kablammo';
+    font-size: 22px;
+    width: 1000px;
+    margin: 20px 10px 20px 10px;
+    color: blueviolet;
+}
+
+.set_1{
+    
+}
+
+.product_name_input{
+    height: 30px;
+    border: none;
+    margin: 10px;
+}
+.description_input{
+    height: 60px;
+    margin: 20px 10px 10px 10px;
+}
+
+.set_2{
+
+}
+.units_input{
+    margin: 10px;
+    height: 30px;
+    border: none
+}
+.price_input{
+    margin: 10px;
+    height: 30px;
+    border: none
+}
+.supplier_input{
+    margin: 10px;
+    height: 30px;
+    border: none
+}
+
+.add_button{
+    margin: 30px 10px 10px 10px ;
+    position: relative;
+    background-color:#0a0a23;
+    left: 80%;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+.add_button:hover {
+      background-color:#002ead;
+      transition: 0.7s;
+  }
