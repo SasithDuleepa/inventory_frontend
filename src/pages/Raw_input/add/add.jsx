@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 export default function Add() {
   const[supplier_data,SetSupplier_data] = useState([]);
-  const url ="http://localhost:8080/raw_input/save_inputs"
+  const url =`http://localhost:8080/raw_input/save_inputs`
   
 
   const[data,setData]= useState({
@@ -84,26 +84,30 @@ const Get_units = async()=>{
 
   return (
     <div className='add_page_raw'>
-        <div><h1 className='add_title'>add raw inputs</h1></div>
+        
         <div>
+          <div className='space'></div>
         <div className='main_add'>
-          
+        <div><h1 className='add_title'>add raw inputs</h1></div>
+
+          <div className='couple'>
                 <div className='add_raw'>
                 <label>raw material name</label>
                 <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/>
                 </div>    
 
-                <div className='add_raw'>
+                <div className='select_supplier'>
                 <label>supplier_name</label>              
                 <select className='supplier_name' id='supplier_name'value={data.supplier_name} onChange={(e)=>handle(e)} required='true'>
                 <option>select supplier</option>
                     {supplier_data.map((product, index)=>(
                         <option key={index} value={product.supplier_name}>{product.supplier_name}</option>
                     ))}    
-                </select>
-             
-                </div>            
-                
+                </select>             
+                </div> 
+
+          </div>
+          <div className='couple'>
                 <div className='add_raw'>
                 <label>purchase_order_number</label>
                 <input className='purchase_order_number' type="text" id='purchase_order_number' value={data.purchase_order_number} onChange={(e)=>handle(e)} placeholder='purchase_order_number'/>
@@ -111,17 +115,23 @@ const Get_units = async()=>{
                 
                 <div className='add_raw'>
                 <label>quantity</label>
-                <input className='quantity' type="text" id='quantity' value={data.quantity} onChange={(e)=>handle(e)} placeholder='quantity'/>
+                <input className='quantity' type="number" id='quantity' value={data.quantity} onChange={(e)=>handle(e)} placeholder='quantity'/>
                 </div>
 
-                <div className='add_raw'>
+          </div>
+          <div className='couple'>
+                <div className='select_unit'>
                 <label>unit_of_measure</label>
+                <div>
                 <select className='unit_of_measure' id='unit_of_measure'value={data.unit_of_measure} onChange={(e)=>handle(e)} required='true'>
-                <option>select supplier</option>
+                <option>unit_of_measure</option>
                     {units.map((product, index)=>(
                         <option key={index} value={product.unit_name}>{product.unit_name}</option>
                     ))}    
                 </select>
+
+                </div>
+                
                 
                 </div>
 
@@ -130,17 +140,21 @@ const Get_units = async()=>{
                 <input className='batch_number' type="text" id='batch_number' value={data.batch_number} onChange={(e)=>handle(e)} placeholder='batch_number'/>
                 </div>
 
+          </div>
+          <div className='couple'>
                 <div className='add_raw'>
                 <label>date_of_receipt</label>
-                <input className='date_of_receipt' type="text" id='date_of_receipt' value={data.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
+                <input className='date_of_receipt' type="date" id='date_of_receipt' value={data.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
                 </div>
 
                 <div className='add_raw'>
                 <label>expiry_date</label>
-                <input className='expiry_date' type="text" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
+                <input className='expiry_date' type="date" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
                 </div>
 
-                <div className='add_raw'>
+          </div>
+          <div className='couple'>
+          <div className='add_raw'>
                 <label >location</label>
                 <input className='location' type="text" id='location' value={data.location} onChange={(e)=>handle(e)} placeholder='location'/>
                 </div>
@@ -150,26 +164,33 @@ const Get_units = async()=>{
                 <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
                 </div>
 
-                <div className='add_raw'>
-                <label>remarks</label>
+          </div>
+          
+                           
+                
+                
+
+                
+
+                
+
+                
+
+                <div className='add_remarks'>
+                  <div>
+                  <label>remarks</label>
                 <input className='remarks' type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
+
+                  </div>
+                
 
                 <button onClick={(e)=> submit(e)} className='add_button_'>Add</button>
 
           </div>
            
             
-                {/* <div>
-                <label>supplier</label>
-               
-                <select className='supplier' id='supplier'value={data.supplier} onChange={(e)=>handle(e)} required='true'>
-                <option>select supplier</option>
-                    {supplier_data.map((product, index)=>(
-                        <option key={index} value={product.supplier_name}>{product.supplier_name}</option>
-                    ))}    
-                </select>
-                </div> */}
+             
 
               
 

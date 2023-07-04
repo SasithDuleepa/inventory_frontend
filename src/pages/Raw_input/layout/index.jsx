@@ -8,8 +8,8 @@ export default function Raw_index() {
   return (
     <div>
       <Add/>
-      <Edite/>
-      <Input_stock_view/>
+      {/* <Edite/>
+      <Input_stock_view/> */}
       
     <div></div>
     </div>

@@ -11,9 +11,9 @@ export default function Index() {
     <div>
         
         <div><InventoryADD/></div>
-        <div><InventoryEDITE/></div>
+        {/* <div><InventoryEDITE/></div>
         
-        <div><InventoryVIEW/></div>
+        <div><InventoryVIEW/></div> */}
     </div>
   )
 }

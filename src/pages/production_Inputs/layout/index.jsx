@@ -8,8 +8,8 @@ export default function Production_input_index() {
     <div> 
      
         <Select_raw_inputs/>
-        <View/>
-        <Edite/>
+        {/* <View/>
+        <Edite/> */}
 
     </div>
   )

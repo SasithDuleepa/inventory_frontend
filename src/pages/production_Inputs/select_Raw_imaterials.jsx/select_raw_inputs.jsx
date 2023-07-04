@@ -238,11 +238,11 @@ export default function Select_raw_inputs() {
 
   const url = "http://localhost:8080/production/save_Raw_materials";
   const [data, setData] = useState({
-    production_order_number: "",
+    production_order_number: "PO-",
     raw_material_name: "",
     quantity_used: "",
     unit_of_measure: "",
-    batch_number: "",
+    batch_number: "BATCH-",
     date_time_of_usage: "", // Initialize as an empty string
     production_line: "",
     responsible_person: "",
@@ -287,6 +287,28 @@ export default function Select_raw_inputs() {
     }
   }
 
+  //raw availability
+  const[raw_avalable, setRaw_avalable]= useState([]);
+  const get_raw_availability= async() =>{
+    const res =await Axios.get('http://localhost:8080/raw_input/raw_avalable')
+    // console.log(res.data);
+    setRaw_avalable(res.data);
+  }
+  useEffect(()=>{
+    get_raw_availability()
+  },[])
+
+  //according to selected raw name , get batch no
+  const[batchNo,setBatchNo] = useState([]);
+  const get_batchNo = async()=>{
+    const res =await Axios.get(`http://localhost:8080/raw_input/get_batch_no/?raw_name='${data.raw_material_name}'`)
+    // console.log(res.data)
+    setBatchNo(res.data)
+  }
+  useEffect(()=>{
+    get_batchNo();
+  },[data.raw_material_name])
+
   return (
     <div className='select_raw_inputs'>
       <h1 className='select_raw_inputs_h1'>Select_raw_inputs to process</h1>
@@ -299,7 +321,26 @@ export default function Select_raw_inputs() {
           </div>
           <div>
             <label>raw_material_name</label>
-            <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e) => handle(e)} placeholder='raw_material_name' />
+            <select className='raw_material_name' id='raw_material_name' value={data.raw_material_name} onChange={(e) => handle(e)}>
+              <option>select raw name</option>
+              {raw_avalable.map((product,index)=>(
+                <option key={index} value={product.raw_material_name}>{product.raw_material_name} exp {product.expiry_date
+                }</option>
+              ))}
+
+            </select>
+            {/* <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e) => handle(e)} placeholder='raw_material_name' /> */}
+          </div>
+          <div>
+            <label>batch_number</label>
+            <select className='batch_number' id='batch_number' value={data.batch_number} onChange={(e) => handle(e)}>
+              <option>select batch no</option>
+              {batchNo.map((product,index)=>(
+                <option key={index} value={product.batch_number}>{product.batch_number} </option>
+              ))}
+
+            </select>
+            {/* <input className='batch_number' type="text" id='batch_number' value={data.batch_number} onChange={(e) => handle(e)} placeholder='batch_number' /> */}
           </div>
           <div>
             <label>quantity_used</label>
@@ -309,10 +350,7 @@ export default function Select_raw_inputs() {
             <label>unit_of_measure</label>
             <input className='unit_of_measure' type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e) => handle(e)} placeholder='unit_of_measure' />
           </div>
-          <div>
-            <label>batch_number</label>
-            <input className='batch_number' type="text" id='batch_number' value={data.batch_number} onChange={(e) => handle(e)} placeholder='batch_number' />
-          </div>
+          
           <div>
             <label>date_time_of_usage</label>
             <DatePicker
@@ -327,10 +365,10 @@ export default function Select_raw_inputs() {
               locale="en"
             />
           </div>
-          <div>
+          {/* <div>
             <label>Batch no.</label>
             <input className='batch_no' type="text" id='batch_no' value={data.batch_no} onChange={(e) => handle(e)} placeholder='batch no' />
-          </div>
+          </div> */}
           <div>
             <label>production_line</label>
             <input className='production_line' type="text" id='production_line' value={data.production_line} onChange={(e) => handle(e)} placeholder='production_line' />
