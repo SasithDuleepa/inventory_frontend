@@ -24,6 +24,8 @@
     height: 100vh;
     color: aquamarine;
     background-color: blue;
+    position: fixed;
+    
 }
 
 
@@ -57,12 +59,17 @@ ul{
 .link_li{
     padding: 7px;
     margin: 3px;
-    background-color: rgb(31, 203, 42);
+    background-color: rgb(161, 47, 226);
+    border-radius: 3px;
+}
+.link_li:hover{
+    background-color: blue;
 }
 .link_li_clicked{
     padding: 7px;
     margin: 3px;
-    background-color: rgb(245, 12, 12);
+    background-color: rgb(59, 157, 237);
+    border-radius: 3px;
 }
 .link-icon{
    margin: auto 5px auto 5px;
@@ -75,6 +82,8 @@ ul{
     display: flex;
 }
 .nav-link-names{
+    text-decoration: none;
+    font-weight: 500;
     
     
 }

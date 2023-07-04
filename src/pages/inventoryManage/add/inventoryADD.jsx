@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './inventoryADD.css';
 
 export default function InventoryADD() {
+  const [batchNo, setBatchNo] = useState([]);
   const url ="http://localhost:8080/products/save"
   const[data,setData]= useState({
+    production_order_number:"",
     product_name:"",
-    description:"",
-    units:"",
-    price:"",
-    supplier:""
+    quantity_produced:"",
+    unit_of_measure:"",
+    date_time_of_production:"",
+    production_line:"",
+    responsible_person:"",
+    remarks:""
 
   })
 
@@ -24,11 +28,15 @@ const submit = async (e)=>{
   e.preventDefault();
   try {
     const resp =await Axios.post(url,{            
-      product_name:data.product_name,
-      product_description:data.description,
-      product_SKU:data.units,
-      product_price:data.price,
-      product_supplier:data.supplier
+      production_order_number:data.production_order_number,
+    product_name:data.product_name,
+    quantity_produced:data.quantity_produced,
+    unit_of_measure:data.unit_of_measure,
+    date_time_of_production:data.date_time_of_production,
+    production_line:data.production_line,
+    responsible_person:data.responsible_person,
+    remarks:data.remarks
+      
   });   
   if(resp.data.error){
     alert(resp.data.message)
@@ -42,48 +50,73 @@ const submit = async (e)=>{
   }
 
 }
+
+const get_batchNo = async (e)=>{
+  const res = await Axios.get('http://localhost:8080/selection/proccessing_batchNo')
+ 
+  setBatchNo(res.data)
+
+}
+
+useEffect(()=>{
+  get_batchNo()
+
+},[])
   return (
-    <div>
+    <div className='add_inventory'>
         <h2 className='add_title'>product add</h2>
         <div className='add'>
             <form onSubmit={(e)=> submit(e)}>
-              <div className='main_set'>
-                <div className='set_1'>
+              <div >
+                
                   <div>
-                <label>product name</label>
-                <input className='product_name_input' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='name'/>
+                <label>production_order_number</label>
+                <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/>
                 </div>
                 <div>
-                <label>description</label>
-                <textarea className='description_input' type="" id='description' value={data.description} onChange={(e)=>handle(e)} placeholder='description'/>
+                <label>product_name</label>
+                <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/>
                 </div>
+                <div>
+                <label>quantity_produced</label>
+                <input className='quantity_produced' type="number" id='quantity_produced' value={data.quantity_produced} onChange={(e)=>handle(e)} placeholder='quantity_produced'/>
+                </div>
+                <div>
+                <label>unit_of_measure</label>
+                <input className='unit_of_measure' type="number" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
+                </div>
+                <div>
+                <label>date_time_of_production</label>
+                <input className='date_time_of_production' type="date" id='date_time_of_production' value={data.date_time_of_production} onChange={(e)=>handle(e)} placeholder='date_time_of_production'/>
+                </div>
+                <div>
+                <label>production_line</label>
+                <input className='production_line' type="text" id='production_line' value={data.production_line} onChange={(e)=>handle(e)} placeholder='production_line'/>
+                </div>
+                <div>
+                <label>responsible_person</label>
+                <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
+                </div>
+                <div>
+                <label>remarks</label>
+                <input className='remarks' type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
                 
-                <div className='set_2'>
-                <div>
-                <label>Stoke Keeping Units</label>
-                <input className='units_input' type="text" id='units' value={data.units} onChange={(e)=>handle(e)} placeholder='units'/>
-                </div>
+               
                 
-                <div>
-                <label>Unit price</label>
-                <input className='price_input' type="text" id='price' value={data.price} onChange={(e)=>handle(e)} placeholder='price'/>
-                </div>
+                <button className='add_button__'>Add</button>
+
+              
                 
-                <div>
-                <label>supplier</label>
-                <input className='supplier_input' type="text" id='supplier' value={data.supplier} onChange={(e)=>handle(e)} placeholder='supplier'/>
                 </div>
 
-                </div>
-                </div>
-
-                <button className='add_button'>add</button>
+               
 
 
             </form>
 
         </div>
+        <div className='space'></div>
     </div>
   )
 }

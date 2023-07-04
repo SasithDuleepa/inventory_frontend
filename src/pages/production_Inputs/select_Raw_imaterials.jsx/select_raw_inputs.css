@@ -1,0 +1,52 @@
+.select_raw_inputs{
+    background-color: rgb(155, 185, 211);
+}
+label{
+    color: black;
+}
+input{
+    border: 1px solid black;
+}
+
+.select_raw_inputs_h1{
+    text-align: center;
+}
+.select_raw_inputs_div{
+    background-color: aqua;
+    margin: 10px 20px 10px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.raw_input{
+    width: 200px;
+    height: 20px;
+    background-color: aquamarine;
+    border-radius: 25px;
+}
+.select_qty_div{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    
+    width: 400px;
+    
+    
+    margin: 30px 10px 10px 10px;
+}
+.select_qty_label{
+    width: 300px;
+}
+.QTY_select{
+    
+}
+.select_qty{
+    display: flex;
+    
+}
+.QTY_select_p{
+    font-weight: 500;
+    width: 200px;
+}

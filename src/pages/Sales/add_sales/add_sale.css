@@ -1,12 +1,27 @@
+.add_sale_main{
+    background-color: rgb(199, 176, 146);
+}
 .label_product{
     color: rgb(13, 13, 12);
+}
+.available_units{
+    margin: -10px 10px 10px 10px;
+    display: flex;
+}
+.units_available{
+    margin: -0px 10px 10px 10px;
 }
 .sales_main{
     background-color: aqua;
     display: flex;
     justify-content: space-evenly;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+    padding: 20px;
 }
-
+.add_sale_heading{
+    text-align: center;
+}
 .sales_left{}
 .sales_right{}
 
@@ -16,3 +31,48 @@
     color: antiquewhite;
     border: 2px solid black;
 }
+
+.add_button{
+    margin: 20px 10px 10px 10px ;
+    position: relative;
+    background-color:#0a0a23;
+    left: 80%;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+.add_button:hover {
+      background-color:#002ead;
+      transition: 0.7s;
+  }
+
+  .submit_button{
+    margin: 50px 10px 10px 10px ;
+    position: relative;
+    background-color:#2e032c;
+    left: 80%;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+}
+.submit_button:hover {
+      background-color:#c803f9;
+      transition: 0.7s;
+  }
+
+
+  .bill_heading{
+    text-align: center;
+  }
+
+  .sale_report{
+    background-color: aqua;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+  }

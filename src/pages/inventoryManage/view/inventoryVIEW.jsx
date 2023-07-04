@@ -53,7 +53,7 @@ const Create_pdf = () => {
 }
 
   return (
-    <div>
+    <div className='inventory'>
       <h2 className='inventory-view-title'>Products View</h2>
       <div className='inventory-view-container'>
         <div className='inventory-view'>
@@ -62,8 +62,8 @@ const Create_pdf = () => {
           <tr>
           <th>product_name</th>
                         <th>product_description</th>
-                        <th>product_price</th>
-                        <th>product_supplier</th>
+                        {/* <th>product_price</th> */}
+                        <th>batch_no</th>
                         <th>product_SKU</th>
                        
           </tr>
@@ -73,8 +73,8 @@ const Create_pdf = () => {
             <tr key={item.idinventory_item_id}>
               <td>{item.product_name}</td>
               <td>{item.product_description}</td>
-              <td>{item.product_price}</td>
-              <td>{item.product_supplier}</td>
+              {/* <td>{item.product_price}</td> */}
+              <td>{item.batch_no}</td>
               <td>{item.product_SKU}</td>
             </tr>
           ))}
@@ -85,7 +85,7 @@ const Create_pdf = () => {
      
       <button onClick={Create_pdf}><img src={PDF} alt="pdf" width="30px" height="30px" style={{marginLeft:"-10px"}}/></button>
       </div>
-      
+      <div className='space'></div>
     </div>
   );
 };

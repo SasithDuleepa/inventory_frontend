@@ -14,27 +14,37 @@ export default function Sidebar() {
 
     //set nav link class names
     const[dashboad, setDashboad] = useState('link_li')
+    const[product, setproduct] = useState('link_li')
     const[sales, setSales] = useState('link_li')
-    const[purchase_order, setPurchase_order] = useState('link_li')
-    const[sales_order, setSales_order] = useState('link_li')
-    const[customer, setCustomer] = useState('link_li')
+    const[input, setInput] = useState('link_li')
+    const[production, setProduction] = useState('link_li')
+    const[production_input, setProduction_input] = useState('link_li')
+    const[Expenses,setExpenses] = useState('link_li')
     const[supplier, setSupplier] = useState('link_li')
-    const[employee, setEmployee] = useState('link_li')
-    const[expense, setExpense] = useState('link_li')
-    const[income, setIncome] = useState('link_li')
-    const[report, setReport] = useState('link_li')
+    const[customer, setCustomer] = useState('link_li')    
     const[setting, setSetting] = useState('link_li')
-    const[add_product, setAdd_product] = useState('link_li')
-    const[add_purchase_order, setAdd_purchase_order] = useState('link_li')
-    const[add_sales_order, setAdd_sales_order] = useState('link_li')
+    
+   
 
     useEffect(()=>{
         if(currentPath=== '/'){
             setDashboad('link_li_clicked')    
         }else if(currentPath=== '/add_product'){
-            setAdd_product('link_li_clicked')
+            setproduct('link_li_clicked')
         }else if(currentPath=== '/sales'){
             setSales('link_li_clicked')
+        }else if(currentPath === '/Raw_input'){
+            setInput('link_li_clicked')
+        }else if(currentPath === "/Production"){
+            setProduction('link_li_clicked')
+        }else if(currentPath === "/Production_inputs"){
+            setProduction_input('link_li_clicked')        
+        }else if(currentPath === "/expenses"){
+            setExpenses('link_li_clicked')        
+        }else if(currentPath === "/supplier"){
+            setSupplier('link_li_clicked')        
+        }else if(currentPath === "/setting"){
+            setSetting('link_li_clicked')
         }
     },[])
 
@@ -66,18 +76,17 @@ export default function Sidebar() {
                 
                 <ul>
                     <li className={dashboad}><div className='Nav-link'><div className='link-icon'><BiChalkboard/></div><div className='link-name'><a href='/' className={navlinknames}>Dashboard</a></div></div></li>
+                    <li className={input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/Raw_input' className={navlinknames}>raw input</a></div></div></li>
+                    <li className={production_input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/Production_inputs" className={navlinknames}>production Inputs</a></div></div></li>
                     
+                    <li className={product}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/add_product' className={navlinknames}>Product</a></div></div></li>
+                    <li className={sales}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/sales' className={navlinknames}>Sale</a></div></div></li>
                     
+                    <li className={production}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/Production" className={navlinknames}>production</a></div></div></li>
+                    <li className={Expenses}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/expenses" className={navlinknames}>Expenses</a></div></div></li>
+                    <li className={supplier}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/supplier" className={navlinknames}>Suppliers</a></div></div></li>
+                    <li className={setting}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/setting" className={navlinknames}>Setting</a></div></div></li>
                     
-                    <li className={add_product}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/add_product' className={navlinknames}>Product</a></div></div></li>
-                    <li className={add_purchase_order}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/sales' className={navlinknames}>Sale</a></div></div></li>
-                    <li className={sales}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>Sales Orders</a></div></div></li>
-                    <li className={report}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>Reports and Analytics</a></div></div></li>
-                    
-                    <li><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>Suppliers</a></div></div></li>
-                    <li><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>Customers</a></div></div></li>
-                    <li><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>User Management</a></div></div></li>
-                    <li><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a className={navlinknames}>Settings</a></div></div></li>
                     
                 </ul>
 

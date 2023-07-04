@@ -9,6 +9,7 @@ import InventoryVIEW from '../view/inventoryVIEW'
 export default function Index() {
   return (
     <div>
+        
         <div><InventoryADD/></div>
         <div><InventoryEDITE/></div>
         

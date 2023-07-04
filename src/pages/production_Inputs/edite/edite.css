@@ -1,0 +1,31 @@
+.edite_div_main{
+    background-color: aquamarine;
+}
+.edite_h1{
+    text-align: center;
+}
+.edite_div{
+    background-color: aqua;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.edite_div_1{
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 20px auto;
+}
+.edite_input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+}
+.edite_div_2{
+    background-color: blue;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.edite_div_3{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: antiquewhite;
+}

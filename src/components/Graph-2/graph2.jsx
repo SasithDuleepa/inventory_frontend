@@ -13,7 +13,8 @@ export default function Graph2() {
 
   const fetchData = async () => {
     try {
-      const res = await Axios.get('http://localhost:8080/products/searchAll');
+      const res = await Axios.get('http://localhost:8080/dashboad/available_products');
+      // console.log(res.data);
       
       setInventoryData(res.data);
     } catch (error) {
@@ -27,7 +28,7 @@ export default function Graph2() {
 
   useEffect(() => {
     if (inventoryData.length > 0) {
-      const seriesData = inventoryData.map(item => parseInt(item.product_SKU));
+      const seriesData = inventoryData.map(item => parseInt(item.sum_product_SKU));
       const labelsData = inventoryData.map(item => item.product_name);
 
       setState(prevState => ({...prevState,
@@ -41,7 +42,7 @@ export default function Graph2() {
 
   return (
     <div>
-      <h1>Graph2</h1>
+      
       <Chart options={state.options} series={state.series} type="donut" width="380" />
     </div>
   );

@@ -12,10 +12,8 @@ export default function InventoryEDITE() {
    description: '',
     units: '',
      price: '',
-      supplier: ''}
-  const[serchresponse,setSearchrespose] = useState([]
-    
-  )
+     batch_no: ''}
+  const[serchresponse,setSearchrespose] = useState([])
 
   const[updateData,setUpdateData]= useState(Data)
   const[data,setData]= useState( Data)
@@ -47,7 +45,10 @@ const search = async (e)=>{
       setSearchrespose([])
     }
   }
-  catch(error){}
+  catch(error){
+    console.log(error)
+    
+  }
 }
 
 //search result select button function
@@ -64,7 +65,7 @@ const select = async (e)=>{
    description: response_data.product_description,
     units: response_data.product_SKU,
      price: response_data.product_price,
-      supplier: response_data.product_supplier
+     batch_no: response_data.batch_no
     })
     
   
@@ -95,7 +96,7 @@ const deleteitem = async (e)=>{
 
 
   return (
-    <div>
+    <div className='inventory_edite'>
       <h2 className='product_edite'>Product EDITE</h2>
       <div className='add'>
       
@@ -109,8 +110,8 @@ const deleteitem = async (e)=>{
                       <tr>
                         <th>product_name</th>
                         <th>product_description</th>
-                        <th>product_price</th>
-                        <th>product_supplier</th>
+                        {/* <th>product_price</th> */}
+                        <th>batch_no</th>
                         <th>product_SKU</th>
                         <th>select</th>
 
@@ -121,8 +122,8 @@ const deleteitem = async (e)=>{
                         <tr key={item.idinventory_item_id}>
                           <td>{item.product_name}</td>
                           <td>{item.product_description}</td>
-                          <td>{item.product_price}</td>
-                          <td>{item.product_supplier}</td>
+                          {/* <td>{item.product_price}</td> */}
+                          <td>{item.batch_no}</td>
                           <td>{item.product_SKU}</td>
                           <td><button onClick={(e)=> select(e)} 
                           value={item.idinventory_item_id                            
@@ -159,8 +160,8 @@ const deleteitem = async (e)=>{
                 </div>
                 
                 <div>
-                <label>supplier</label>
-                <input type="text" id='supplier' value={data.supplier} onChange={(e)=>handle(e)} placeholder='supplier'/>
+                <label>batch_no</label>
+                <input type="text" id='batch_no' value={data.batch_no} onChange={(e)=>handle(e)} placeholder='batch_no'/>
                 </div>
                 </div>
                 </div>
@@ -173,6 +174,7 @@ const deleteitem = async (e)=>{
                 <button className='delete_btn' onClick={deleteitem}>delete</button>
                 </div>
         </div>
+        <div className='space'></div>
     </div>
   )
 }

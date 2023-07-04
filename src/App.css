@@ -1,9 +1,18 @@
 .App {
   text-align: center;
+  background-color: aliceblue;
   
 }
 
 .main{
   margin-left: 60px;
   
+}
+
+
+:root{
+  --form-backgroung-color:#f2f2f2;
+  --form-text-color: #000000;
+  --form-text-font-size: 16px;
+  --form-text-font-family: Arial, sans-serif;
 }

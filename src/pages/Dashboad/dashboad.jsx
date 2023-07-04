@@ -16,6 +16,8 @@ import Category from './../../icons/category.png'
 import Product from './../../icons/packaging.png'
 import Oders from './../../icons/checklist.png'
 
+import View from '../../components/raw_stock/view/view';
+
 export default function Dashboad() {
   return (
     <div>
@@ -68,35 +70,38 @@ export default function Dashboad() {
             <div className='section-2'> 
 
             <div className='sales-report'>
-                <h2>sales report</h2>
+                <h2 className='sales-report-title'>sales</h2>
                 <div>
                     <Graph1/>
                 </div>
             </div>
 
             <div className='product-details'>
-                <h2> available products</h2>
+                <h2 className='product-details-title'> available products</h2>
                 <div><Graph2/></div>
             </div>
             </div>
 
+            
+            
             <div className='section-3'>
                 <div className='category-wise-sales'>
-                    <h2>category wise sales</h2>
+                    <h2 className='category-wise-sales-title'>category wise sales</h2>
                     <div><Graph3/></div>
                 </div>
                 <div className='category-wise-quotation'>
-                    <h2>category wise quotation</h2>
+                    <h2 className='category-wise-quotation-title'>category wise quotation</h2>
                     <div><Graph4/></div>
 
                 </div>
             </div>
 
             <div className='section-4'>
-                <div className='purchase-report'>
-                    <h2>purchase report</h2>
+                {/* <div className=''>
+                    <h2 className=''>raw input stock level</h2>
+                    <View/>
 
-                </div>
+                </div> */}
             </div>
         </div>
        

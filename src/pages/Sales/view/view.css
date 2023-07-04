@@ -1,0 +1,49 @@
+
+.View_main{
+    background-color: aquamarine;
+}
+.View_heading{
+    text-align: center;
+}
+.View_container{
+    background-color: aqua;
+    margin: 10px 20px 10px 20px;
+    border-radius: 10px;
+}
+.div_search{
+    display: flex;
+    justify-content: center;
+}
+.search_container{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.search_input{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.bill_list{
+    background-color: antiquewhite;
+    margin: -10px 10px 10px 27px;
+
+    border-radius: 10px;
+    padding: 20px;
+   
+    
+}
+.bill_list_item{
+    list-style: none;
+    
+}
+
+.bill_data{
+    background-color: rgb(172, 172, 178);
+    margin: 10px 10px 20px 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
