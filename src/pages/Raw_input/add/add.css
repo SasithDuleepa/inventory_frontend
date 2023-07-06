@@ -35,6 +35,9 @@ input, select{
     display: flex;
     justify-content: space-between;
 }
+.raw_material_name_select{
+    height: 20px;
+}
 .add_remarks{
     
     display: flex;

@@ -1,301 +1,216 @@
-import React, { useState , useEffect } from 'react'
-import Axios from 'axios';
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import './add_sale.css'
+import Axios from 'axios'
+import { FiEdit , FiDelete } from "react-icons/fi";
 
-export default function Add_sale() {
-    const [inventoryData, setInventoryData] = useState([]);//api get values for productname
-    const [selectedProduct, setSelectedProduct] = useState();//input value for product
+
+
+export default function Sale() {
+  const[bill, setBill] = useState([])
+  const[data, setData] = useState({   
+    product_name:'',
+    production_order_number:'',
+    quantity_sold:'',
+    unit_price:'',
+     })
+
+    const[data_const, setData_const] = useState({       
+      sale_date:'',
+      customer_name:'',
+      payment_method:'',
+      remarks:'',
+      bill_id:''  })  
+
+
+  function handle(e){
+    e.preventDefault()
     
-
-    const [bill_id, setBill_id ]= useState (99)
-    const[batch_no, setBatch_no] = useState([])
-
-    const [all_data, setAll_data] = useState({
-        product_name:"",
-        units:'',
-        unit_price:'',
-        customer:'',
-        date:'',
-        bill_id:'',
-        batch_no:''
+    const newdata={...data}
+    newdata[e.target.id]= e.target.value
+    setData(newdata)
     
-    })
-
-
-     //all input data for table
-     const [table_data, setTable_data] = useState([]);
-    
-
-
-    const HandleUnits = (e) =>{
-       const newdata = {...all_data}
-       newdata.units = e.target.value
-        setAll_data(newdata)
-        
-    
-    }
-    const HandleUnitprice = (e) =>{      
-      const newdata = {...all_data}
-      newdata.unit_price = e.target.value 
-        setAll_data(newdata)
-    }
-         
-    const handleChange = (event) => {
-      const newdata = {...all_data}
-      newdata.product_name = event.target.value
-        setAll_data(newdata)
-        
-        
-      }
-
-    const HandleCustomer = (e) =>{        
-      const newdata = {...all_data}
-      newdata.customer = e.target.value
-        setAll_data(newdata)
-    }
-    const HandleDate = (e) =>{
-      const newdata = {...all_data}
-      newdata.date = e.target.value
-        setAll_data(newdata)
-    }
-       
-
-
-
-   //add button function
-   const add_sale = async() =>{
+}
+function handle_const(e){
+  const newdata={...data_const}
+  newdata[e.target.id]= e.target.value
+  setData_const(newdata)
   
-
-    if(all_data.product_name === undefined || all_data.units ===undefined || all_data.unit_price === undefined || all_data.customer === undefined || all_data.date === undefined){
-      alert('fill all fields')
-    }else{
-      const newdata = {...all_data}
-        setTable_data([...table_data,newdata])
-        
-    }
-
-      }
-
-
-//function for get Product names
-const Get_product_names =async() =>{
-    try {
-        const res = await Axios.get('http://localhost:8080/selection/Availble_products');
-        
-        
-        setInventoryData(res.data);
-        
-    } catch (error) {
-        console.log(error);
-    }
-}      
+}
 
 
 
-//send data to server
-const send_data = async() =>{
-  console.log(table_data)
-  try {
-    const resp =await Axios.post('http://localhost:8080/sales/save',table_data);
-    console.log(resp.data);
-  } catch (error) {
-    console.log(error);
+
+
+
+function addToBill(e) {
+  e.preventDefault();
+
+  // Check if the item already exists in the bill array
+  const existingItemIndex = bill.findIndex((item) => item.product_name === data.product_name);
+
+  if (existingItemIndex !== -1) {
+    // If the item exists, update it with the new data
+    const updatedBill = [...bill];
+    updatedBill[existingItemIndex] = data;
+    setBill(updatedBill);
+  } else {
+    // If the item doesn't exist, add it to the bill array
+    setBill([...bill, data]);
   }
 
-  //reload page
-  window.location.reload()
+  clear_data();
 }
 
-//create bill id 
-function generateUniqueId() {
-  return Math.random().toString(36).substr(2, 9);
-}
-const generateBillNumber = () => {
-  const prefix = 'BILL';
-  const timestamp = Date.now().toString();
-  const uniqueId = generateUniqueId();
 
-  const generatedBillNumber = `${prefix}-${timestamp}-${uniqueId}`;
-  setBill_id(generatedBillNumber);
-  setAll_data({bill_id:generatedBillNumber})
+
+function clear_data(){
+  setData({
+    product_name: '',
+    production_order_number: '',
+    quantity_sold: '',
+    unit_price: '',
+  });
+}
+useEffect(() => {
+  clear_data()
+
+},[bill])
+
+const delete_handler = (e, index) => {
+  const updatedBill = [...bill];
+  updatedBill.splice(index, 1);
+  setBill(updatedBill);
+};
+
+const edite_handler = (e, index, item) => {
+  e.preventDefault();
+  setData({
+    product_name: item.product_name,
+    production_order_number: item.production_order_number,
+    quantity_sold: item.quantity_sold,
+    unit_price: item.unit_price,
+  });
+  
+  bill.splice(index, 1);
+  setBill(bill);
+  
 };
 
 
-//get batch no from api
-
-const get_batch_no = async(e) =>{
-  const res = await Axios.get('http://localhost:8080/dashboad/search_batch_no')
-  
-  setBatch_no(res.data)
-
-
+const AddBill = async()=>{
+  const res =await Axios.post('http://localhost:8080/sales/save',{
+      sale_date:data_const.sale_date,
+      customer_name:data_const.customer_name,
+      payment_method:data_const.payment_method,
+      remarks:'',
+      bill_id:data_const.bill_id,
+      bill:bill
+  })
+  window.location.reload();
 }
 
-//func for batcch no
-const batch_noHandler= async(event)=>{
-  const newdata = {...all_data}
-      newdata.batch_no = event.target.value
-        setAll_data(newdata)
 
-  
-  
-}
-const[batch_no_data, setBatch_no_data] = useState([])
-//get batch no according to product
-//get batch no according to product
-const get_batch_no_product = async(e) =>{
-  const product =all_data.product_name ;
- 
-  
-  const res = await Axios.get(`http://localhost:8080/dashboad/batch_no_product/?product_name=${product}`)
-  
- 
-  setBatch_no_data(res.data)
-
-}
-
-useEffect(() => {
-  get_batch_no_product()
-},[all_data.product_name])
-
-
-useEffect(() => {
-  Get_product_names();
-  generateBillNumber();
-  get_batch_no();
-  
-}, []);
-
-const[qty, setQty] = useState([])
-//get qty according to batch no
-const available_qty = async(e)=>{
-  const res = await Axios.get(`http://localhost:8080/selection//qty_batchNo/?batch_no=${all_data.batch_no}`)
-  
-  setQty(res.data)
-
-}
-useEffect(() => {
-  available_qty()
-},[all_data.batch_no])
-
+const subtotal = bill.reduce((total, item) => {
+  return total + item.unit_price * item.quantity_sold;
+}, 0);
 
   return (
-    <div className='add_sale_main'>
-        <h1 className='add_sale_heading'>Add Sale</h1>
-        <div>
-         <div className='sales_main'>
-          
+    <div className='add_sale'>
+        <div className='add_sale_main'>    
+      <h1 className='add_sale_h1'>Sale</h1>
+              <div className='add_sale_2'>
                 
-                  
-                <div className='sales_left'>
-                  
                 <div>
-                    <label className='label_product'>Select Product</label>
-                <select value={selectedProduct} onChange={handleChange} required='true'>
-                <option>select product</option>
-                    {inventoryData.map((product, index)=>(
-                        
-                        <option key={index} value={product.product_name}>{product.product_name}</option>
-                    ))}    
-                </select>
+                <label>sale_date</label>
+                <input className='sale_date' type="date" id='sale_date' value={data_const.sale_date} onChange={(e)=>handle_const(e)} placeholder='sale_date'/>
+                </div>
+                <div>
+                <label>customer_name</label>
+                <input className='customer_name' type="text" id='customer_name' value={data_const.customer_name} onChange={(e)=>handle_const(e)} placeholder='customer_name'/>
+                </div>
+                <div>
+                <label>payment_method</label>
+                <input className='payment_method' type="text" id='payment_method' value={data_const.payment_method} onChange={(e)=>handle_const(e)} placeholder='payment_method'/>
+                </div>
+                {/* <div>
+                <label>remarks</label>
+                <input className='remark' type="text" id='remarks' value={data_const.remarks} onChange={(e)=>handle_const(e)} placeholder='remarks'/>
+                </div> */}
+                <div>
+                <label>bill_id</label>
+                <input className='bill_id' type="text" id='bill_id' value={data_const.bill_id} onChange={(e)=>handle_const(e)} placeholder='bill_id'/>
+                </div>
+                </div>
+             <div className='add_sale_1'>
+              <div className='add_sale_1_1'>
+                <div >
+                <label>product_name</label>
+                <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/>
+                </div>
+                <div >
+                <label>production_order_number</label>
+                <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/>
                 </div>
 
-                <div>
+              </div>
+              <div className='add_sale_1_2'>
+                 <div >
+                <label>quantity_sold</label>
+                <input className='quantity_sold' type="text" id='quantity_sold' value={data.quantity_sold} onChange={(e)=>handle(e)} placeholder='quantity_sold'/>
+                </div>
+                <div >
+                <label>unit_price</label>
+                <input className='unit_price' type="text" id='unit_price' value={data.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
+                </div>
+              </div>
+              <div>
+                
+
+              </div>
                  
-                    <label className='label_units'>batch no.</label>
-                <select value={batch_no} onChange={batch_noHandler} required='true'>
-                <option>select batch no</option>
-                    {batch_no_data.map((product, index)=>(
-                        
-                        <option key={index} value={product.batch_no}>{product.batch_no} manu. date:{product.date}</option>
-                    ))}    
-                </select>
-                </div>
+                
 
-                 <div>
-                <label className='label_units'>product Units</label>
-                <input className='input_units' id='units' onChange={(e)=>HandleUnits(e)} value={all_data.units} type="number"  placeholder='4 products available' required/>
-                <p className='available_units'>Available units : 
-                {qty.map((data,index)=>(
-                  <p className='units_available' key={index}> {data.product_SKU} </p>
-                ))}</p>
+                 <button className='add_sale_btn_1' onClick={(e)=>addToBill(e)}>Enter</button>
+             </div>
+ 
                
-                </div>
 
-                <div>
-                <label className='label_Unitprice'>Unit Price</label>
-                <input className='input_units' onChange={(e)=>HandleUnitprice(e)} value={all_data.unit_price} type="text"  placeholder='unit price' />
-                </div>
+
+
                 
-                </div>
-
-                <div className='sales_right'>
-                <div className='bill_id'>
-          <p> Bill id : {all_data.bill_id}</p>
-
-          </div>
                 
                 <div>
-                <label className='label_Customer'>customer</label>
-                <input className='input_units' onChange={(e)=>HandleCustomer(e)} value={all_data.customer}   type="text"  placeholder='Customer' />
+                  <table>
+                    <thead>
+                      <th>product_name</th>
+                      <th>quantity_sold</th>
+                      <th>unit_price</th>
+                      <th>total_price</th>
+                      <th>action</th>
+
+                    </thead>
+                    <tbody>
+                      {bill.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item.product_name}</td>
+                          <td>{item.quantity_sold}</td>
+                          <td>{item.unit_price}</td>
+                          <td>{'$'+(item.unit_price*item.quantity_sold)}</td>
+                          <td><button className='bill_delete_btn' onClick={(e)=>delete_handler(e,index)}><FiDelete/></button><button className='bill_edit_btn' onClick={(e)=>edite_handler(e,index,item)}><FiEdit/></button></td> 
+                                                  
+                        </tr>                        
+                      ))}                       
+                    </tbody>
+                    <tbody>
+                      <td colSpan={3}>Subtotal</td>
+                      <td>{'$' + subtotal}</td>
+                   </tbody>
+                  </table>
+                  <button className='bill_btn' onClick={(e)=>AddBill(e)}>Add_Bill</button>
                 </div>
-
-                <div>
-                <label className='label_Date'>Date</label>
-                <input className='input_units' onChange={(e)=>HandleDate(e)} value={all_data.date}  type="date"  placeholder='Date' />
-                </div>
-
-                <button className='add_button' onClick={add_sale}>ADD</button>
-
-                </div>
-
-                
-                
-                
-                
-               
-                
-                
-                
-                
-
-                
-         </div>
-         <h1 className='bill_heading'>Bill</h1>
-
-         <div className='sale_report'>
-          <table>
-            <thead>
-              <tr>
-                <th>Product Name</th>
-                <th>Batch No</th>
-                <th>Units</th>
-                <th>Unit Price</th>
-                <th>Customer</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {table_data.map((data, index)=>(
-                <tr key={index}>
-                  <td>{data.product_name}</td>
-                  <td>{data.batch_no}</td>
-                  <td>{data.units}</td>
-                  <td>{data.unit_price}</td>
-                  <td>{data.customer}</td>
-                  <td>{data.date}</td>
-                </tr>
-              ))}
-            </tbody>
-
-          </table>
-
-          <button className='submit_button' onClick={send_data}>Submit</button>
-
-         </div>
-         
-        </div>
-        <div className='space'></div>
     </div>
+    </div>
+    
   )
 }

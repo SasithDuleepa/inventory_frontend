@@ -9,7 +9,7 @@ export default function Sales() {
         
 
         <Add_sale/>
-        <View/>
+        {/* <View/> */}
     </div>
   )
 }

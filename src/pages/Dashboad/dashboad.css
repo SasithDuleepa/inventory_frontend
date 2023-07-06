@@ -8,7 +8,7 @@
 }
 .dashboad-summery{
     border-bottom: 20px solid rgb(229, 137, 17);
-    background-color: aqua;
+    background-color: rgb(106, 106, 106);
     width: 90%;
     height: 100px;
     margin: 0 auto;
@@ -72,7 +72,14 @@
     height: 70px;
     margin-top: 10px;
 }
-
+.dashboad_p{
+    font-weight: 500;
+}
+.dashboad_p_{
+    font-size: 26px;
+    font-weight: 600;
+    margin: -5px 10px 10px 40px;
+}
 
 .section-2{
     display: flex;
@@ -87,45 +94,7 @@
     justify-content: space-evenly;
 }
 
-.sales-report{
-    background-color: rgba(250, 235, 215, 0.519);
-    margin: 20px 10px 20px 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.sales-report-title{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.product-details{
-    background-color: rgba(250, 235, 215, 0.519);
-    margin: 20px 10px 20px 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.product-details-title{
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.category-wise-sales{
-    background-color: rgba(250, 235, 215, 0.519);
-    margin: 20px 10px 20px 10px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.category-wise-sales-title{
-    text-align: center;
-}
-
-.category-wise-quotation{
-    background-color: rgba(250, 235, 215, 0.519);
-    margin: 20px 10px 20px 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.category-wise-quotation-title{
-    text-align: center;
+.dashboad-raw_stock_view{
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './dashboad.css'
+import Axios  from 'axios';
 
 
 
-import Graph1 from '../../components/Graph-1/graph1';
-import Graph2 from '../../components/Graph-2/graph2';
-import Graph3 from '../../components/Graph-3/graph3';
-import Graph4 from '../../components/Graph-4/graph4';
+import Raw_stock from './raw_stock/raw_stock';
+import ProductStock from './product_stock/product_stock';
 
 
 
@@ -19,6 +18,41 @@ import Oders from './../../icons/checklist.png'
 import View from '../../components/raw_stock/view/view';
 
 export default function Dashboad() {
+
+const[tot_rawSupplier, setTot_rawSupplier] = useState('loading..')
+  const Raw_suppliers = async()=>{
+    const res =await Axios.get('http://localhost:8080/supplier/Get_all')
+    // console.log(res.data)
+    setTot_rawSupplier(res.data.length)
+  
+      }   
+ 
+  //get total products
+  const[tot_products, setTot_products] = useState('loading..')
+  const Total_products = async()=>{
+    const res =await Axios.get('http://localhost:8080/product_name/get_all_names')
+    // console.log(res.data)
+    setTot_products(res.data.length)
+  
+      
+  }
+  
+  //get raw names
+  const[raw_names, setRaw_names] = useState('loading..')
+  const Raw_names = async()=>{
+    const res =await Axios.get('http://localhost:8080/raw_material_name/get_raw_names')
+    console.log(res.data)
+    setRaw_names(res.data.length) 
+      
+  }
+  useEffect(()=>{
+    Raw_suppliers()
+    Raw_names()
+    Total_products()
+  
+  
+  
+  }) 
   return (
     <div>
         <h1 className='dashboad-title'>Inventory Management Dashboad</h1>
@@ -28,8 +62,8 @@ export default function Dashboad() {
 
                 <div className='dashboad-summery-item-1'>
                     <div className='dashboad-summery-item-1-tot-vendors'>
-                        <p>Total Vendors</p>
-                        <p>2</p>
+                        <p className='dashboad_p'>Raw suppliers</p>
+                        <p className='dashboad_p_'>{tot_rawSupplier}</p>
                     </div>
                     <div className='dashboad-summery-item-1-icon'>
                         <img className='team-img' src={Team} alt=""/>
@@ -38,8 +72,8 @@ export default function Dashboad() {
 
                 <div className='dashboad-summery-item-2'>
                     <div className='dashboad-summery-item-2-tot-category'>
-                        <p>Total Categories</p>
-                        <p>2</p>
+                        <p className='dashboad_p'> Raw Categories</p>
+                        <p className='dashboad_p_'>{raw_names}</p>
                     </div>
                     <div className='dashboad-summery-item-2-icon'>
                         <img className='catergory-img' src={Category} alt=""/>
@@ -48,8 +82,8 @@ export default function Dashboad() {
 
                 <div className='dashboad-summery-item-3'>
                     <div className='dashboad-summery-item-3-tot-products'>
-                        <p>Total Products</p>
-                        <p>2</p>
+                        <p className='dashboad_p'>Total Products</p>
+                        <p className='dashboad_p_'>{tot_products}</p>
                     </div>
                     <div className='dashboad-summery-item-3-icon'>
                         <img className='product-img' src={Product} alt=""/>
@@ -58,8 +92,8 @@ export default function Dashboad() {
 
                 <div className='dashboad-summery-item-4'>
                     <div className='dashboad-summery-item-4-tot-orders'>
-                        <p>Total Orders</p>
-                        <p>2</p>                        
+                        <p className='dashboad_p'>Total Orders</p>
+                        <p className='dashboad_p_'>2</p>                        
                     </div>
                     <div className='dashboad-summery-item-4-icon'>
                         <img className='order-img' src={Oders} alt=""/>
@@ -67,42 +101,15 @@ export default function Dashboad() {
                 </div>
             </div>
 
-            <div className='section-2'> 
-
-            <div className='sales-report'>
-                <h2 className='sales-report-title'>sales</h2>
-                <div>
-                    <Graph1/>
+            <div>
+                <div className='dashboad-raw_stock_view'>
+                <div ><Raw_stock/></div>
+                <div ><ProductStock/></div>
                 </div>
+                
             </div>
 
-            <div className='product-details'>
-                <h2 className='product-details-title'> available products</h2>
-                <div><Graph2/></div>
-            </div>
-            </div>
-
-            
-            
-            <div className='section-3'>
-                <div className='category-wise-sales'>
-                    <h2 className='category-wise-sales-title'>category wise sales</h2>
-                    <div><Graph3/></div>
-                </div>
-                <div className='category-wise-quotation'>
-                    <h2 className='category-wise-quotation-title'>category wise quotation</h2>
-                    <div><Graph4/></div>
-
-                </div>
-            </div>
-
-            <div className='section-4'>
-                {/* <div className=''>
-                    <h2 className=''>raw input stock level</h2>
-                    <View/>
-
-                </div> */}
-            </div>
+          
         </div>
        
     </div>

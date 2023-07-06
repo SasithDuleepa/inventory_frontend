@@ -3,7 +3,7 @@ import Axios from 'axios';
 import './inventoryADD.css';
 
 export default function InventoryADD() {
-  const [batchNo, setBatchNo] = useState([]);
+  
   const url ="http://localhost:8080/products/save"
   const[data,setData]= useState({
     production_order_number:"",
@@ -50,32 +50,86 @@ const submit = async (e)=>{
   }
 
 }
-
-const get_batchNo = async (e)=>{
-  const res = await Axios.get('http://localhost:8080/selection/proccessing_batchNo')
- 
-  setBatchNo(res.data)
+const [order_no, setOrder_no] = useState([]);
+const production_order_numberNo = async (e)=>{
+  const res = await Axios.get('http://localhost:8080/production/get_pending')
+  // console.log(res.data)
+  setOrder_no(res.data)
 
 }
 
 useEffect(()=>{
-  get_batchNo()
-
+  
+production_order_numberNo();
 },[])
+
+// set product names
+const [product_name, setProduct_name] = useState([]);
+const Product_Name = async (e)=>{
+  const res = await Axios.get('http://localhost:8080/product_name/get_all_names')
+  // console.log(res.data)
+  setProduct_name(res.data)
+
+}
+useEffect(()=>{
+  
+  Product_Name();
+
+  },[])
+
+//set unit of measure
+const Units = async (e)=>{
+  const res = await Axios.get(`http://localhost:8080/product_name/get_unit_accordingToname/?product_name='${data.product_name}'`)
+  const res_data = res.data;
+  if(res_data.length !== 0){
+    setData({
+      ...data,
+      unit_of_measure:res_data[0].unit
+    })
+  }
+  
+  
+}  
+useEffect(()=>{
+  
+  Units();
+
+  },[data.product_name])
   return (
     <div className='add_inventory'>
-        <h2 className='add_title'>product add</h2>
+      <div className='space'></div>
+        
         <div className='add'>
+
+        <h1 className='add_title'>product add</h1>
             <form onSubmit={(e)=> submit(e)}>
               <div >
                 
                   <div>
                 <label>production_order_number</label>
-                <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/>
+                <select className='production_order_number' id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)}>
+                  <option value="">select production_order_number</option>
+                  {order_no.map((order_no, index)=>{
+                    return(
+                      <option key={index} value={order_no.production_order_number}>{order_no.production_order_number}</option>
+                    )
+                  }
+                  )}
+                </select>
+               
                 </div>
                 <div>
                 <label>product_name</label>
-                <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/>
+                <select className='product_name' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
+                  <option value="">select product_name</option>
+                  {product_name.map((product_name, index)=>{
+                    return(
+                      <option key={index} value={product_name.product_name}>{product_name.product_name}</option>
+                    )
+                  }
+                  )}
+                  </select>
+                {/* <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/> */}
                 </div>
                 <div>
                 <label>quantity_produced</label>
@@ -83,7 +137,7 @@ useEffect(()=>{
                 </div>
                 <div>
                 <label>unit_of_measure</label>
-                <input className='unit_of_measure' type="number" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
+                <input className='unit_of_measure' type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
                 </div>
                 <div>
                 <label>date_time_of_production</label>

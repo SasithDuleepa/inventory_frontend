@@ -2,7 +2,7 @@
     background-color: #879ace;
 }
 .add{
-    background-color: aqua;
+    background-color:var(--form-backgroung-color);
     margin: 10px 100px 10px 100px;
     padding: 20px;
     border-radius: 10px;

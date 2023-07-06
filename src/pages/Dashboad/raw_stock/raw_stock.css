@@ -1,0 +1,9 @@
+.row_stock_h{
+    text-align: center;
+}
+.chart{
+    background-color: rgba(144, 144, 144, 0.519);
+    margin: 20px 10px 20px 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

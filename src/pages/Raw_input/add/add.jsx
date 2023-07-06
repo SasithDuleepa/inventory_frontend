@@ -11,7 +11,7 @@ export default function Add() {
   const[data,setData]= useState({
     raw_material_name:"",
     supplier_name:"",
-    purchase_order_number:"",
+    purchase_order_number:"PO-",
     quantity:"",
     unit_of_measure:"",
     batch_number:"",
@@ -82,6 +82,19 @@ const Get_units = async()=>{
    setUnits(res.data)
 }
 
+//get raw input names
+const[raw_names, setRaw_names]= useState([])
+const Get_raw_names = async()=>{
+  const res = await Axios.get('http://localhost:8080/raw_material_name/get_raw_names')
+  console.log(res.data)
+  setRaw_names(res.data)
+
+}
+useEffect(()=>{
+  Get_raw_names();
+
+},[])
+
   return (
     <div className='add_page_raw'>
         
@@ -93,7 +106,15 @@ const Get_units = async()=>{
           <div className='couple'>
                 <div className='add_raw'>
                 <label>raw material name</label>
-                <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/>
+                <select className='raw_material_name_select'  id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)}> 
+                <option>select raw name</option>
+                {raw_names.map((product, index)=>(
+                    <option key={index} value={product.raw_material}>{product.raw_material}</option>
+                    ))}
+                  
+
+                </select>
+                {/* <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/> */}
                 </div>    
 
                 <div className='select_supplier'>

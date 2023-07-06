@@ -2,24 +2,65 @@
     background-color: rgb(155, 185, 211);
 }
 label{
-    color: black;
+    font-family: var(--form-text-font-family);
+    font-size: var(--form-text-font-size);    
+    width: 200px;
+    text-align: right;
+    position: relative;
 }
 input{
     border: 1px solid black;
 }
-
+input, select{
+    width: 250px;
+    
+}
 .select_raw_inputs_h1{
     text-align: center;
 }
 .select_raw_inputs_div{
-    background-color: aqua;
+    background-color: var(--form-backgroung-color);
     margin: 10px 20px 10px 20px;
     padding: 20px;
     border-radius: 10px;
+    
+}
+.select_raw_inputs_div_1{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.select_raw_inputs_div_2{
     display: flex;
     justify-content: space-evenly;
+    padding: 20px;
+    text-align: right;
 }
-
+.select_raw_inputs_div_2_1{
+    display: flex;
+}
+.select_raw_inputs_div_3{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    text-align: right;
+}
+.select_raw_inputs_div_4{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    text-align: right;
+}
+.select_raw_inputs_div_5{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.select_raw_inputs_div_6{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
 .raw_input{
     width: 200px;
     height: 20px;

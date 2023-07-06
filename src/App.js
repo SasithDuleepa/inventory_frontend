@@ -5,7 +5,7 @@ import './App.css';
 import Sidebar from './components/SideBar/sidebar';
 
 import Dashboad from "./pages/Dashboad/dashboad";
-import Index from "./pages/inventoryManage/layout";
+import Index from "./pages/production_output/layout";
 import Sales from "./pages/Sales/layout";
 import Raw_index from "./pages/Raw_input/layout";
 import production_index from "./pages/Production/layout";
