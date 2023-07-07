@@ -38,8 +38,44 @@ function handle_const(e){
   
 }
 
+//set available products
+const[available_products, setAvailable_products] = useState([])
+const get_available_products = async()=>{
+  const res = await Axios.get('http://localhost:8080/products/available')
+  setAvailable_products(res.data)
+}
+useEffect(()=>{get_available_products()},[])
+
+//set PO_no
+const[PO_no, setPO_no] = useState([])
+const get_PO_no = async()=>{
+  const res = await Axios.get(`http://localhost:8080/products/searchone/?product_name=${data.product_name}`)
+  // console.log(res.data)
+  setPO_no(res.data)}
+useEffect(()=>{
+  get_PO_no()
+},[data.product_name])
+
+//get avalable product qty
+
+const[available_product_qty, setAvailable_product_qty] = useState([])
+const get_available_product_qty = async()=>{
+  const res = await Axios.get(`http://localhost:8080/products/available_QTY_POno/?PO_no=${data.production_order_number}`)
+  const first_arr = res.data
+  
+  if( first_arr.length !== 0){
+    const qty = first_arr[0].available_quantity
+    // console.log(qty)
+    setAvailable_product_qty(qty)
+  }
+  
 
 
+}
+useEffect(()=>{
+  get_available_product_qty()
+
+},[data.production_order_number])
 
 
 
@@ -100,6 +136,7 @@ const edite_handler = (e, index, item) => {
 
 const AddBill = async()=>{
   const res =await Axios.post('http://localhost:8080/sales/save',{
+      PO_no:data.production_order_number,
       sale_date:data_const.sale_date,
       customer_name:data_const.customer_name,
       payment_method:data_const.payment_method,
@@ -146,16 +183,30 @@ const subtotal = bill.reduce((total, item) => {
               <div className='add_sale_1_1'>
                 <div >
                 <label>product_name</label>
-                <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/>
+                <select className='product_name' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
+                  <option value="">Select Product</option>
+                  {available_products.map((item, index) => (
+                    <option key={index} value={item.product_name}>{item.product_name}</option>
+                    ))}
+                    
+                </select>
+                {/* <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/> */}
                 </div>
                 <div >
                 <label>production_order_number</label>
-                <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/>
+                <select className='production_order_number' id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)}>
+                  <option value="">Select PO_no</option>
+                  {PO_no.map((item, index) => (
+                    <option key={index} value={item.production_order_number}>{item.production_order_number}</option>
+                    ))}
+                </select>
+                {/* <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/> */}
                 </div>
 
               </div>
               <div className='add_sale_1_2'>
                  <div >
+                  <p>available qty : {available_product_qty}</p>
                 <label>quantity_sold</label>
                 <input className='quantity_sold' type="text" id='quantity_sold' value={data.quantity_sold} onChange={(e)=>handle(e)} placeholder='quantity_sold'/>
                 </div>

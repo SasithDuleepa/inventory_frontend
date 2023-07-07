@@ -1,0 +1,37 @@
+
+.product_units_container{
+   display: flex;
+   justify-content: center;
+    
+}
+.product_units_input{
+    border: 2px solid black;
+}
+.product_units_button{
+    
+                    display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    font-weight: 600;
+                    border-radius: 3px;
+                    padding: 12px 24px;
+                    border: 0;
+                    color: #000021;
+                    background: #7aa89c;
+                    line-height: 1.15;
+                    font-size: 16px;
+                    
+                
+}
+.product_units_button:hover {
+                        transition: all .1s ease;
+                        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+                    }
+
+.product_units_title{
+    text-align: center;
+}
+.units_container{
+    display: flex;
+    justify-content: center;
+}

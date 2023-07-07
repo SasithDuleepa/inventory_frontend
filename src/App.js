@@ -15,6 +15,8 @@ import Index_setting from "./pages/setting/layout";
 
 import Index_supplier from "./pages/Supplier/layout";
 
+
+
 function App() {
   return (
     < >
@@ -32,6 +34,8 @@ function App() {
           <Route exact path="/expenses" component={Index_expenses}/>
           <Route exact path="/Supplier" component={Index_supplier}/>
           <Route exact path="/setting" component={Index_setting}/>
+
+          
         </Switch>
       </Router>
       </div>

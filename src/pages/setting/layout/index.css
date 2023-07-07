@@ -1,0 +1,36 @@
+.setting_nav{
+    background-color: rgb(119, 119, 119);
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -10px;
+}
+.setting_nav_item{
+    background-color: rgba(0, 0, 0, 0.147);
+    height:70% ;
+    margin-top: 5px;       
+}
+
+.setting_nav_item_active{
+    border-bottom: 4px solid rgba(0, 0, 0, 0.256);
+    height:70% ;
+    margin-top: 5px;
+}
+
+
+.nav-link{
+    color: azure;
+    position: relative;
+    top: 10%;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 8px;
+    text-decoration: none;
+}
+
+
+
+  
+  
+  
+  

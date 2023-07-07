@@ -1,0 +1,41 @@
+.add_unit_title{
+    text-align: center;
+}
+.add_unit_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.add_unit_input{
+    border: 2px solid black;
+}
+.add_unit_btn{
+    
+                    display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    font-weight: 600;
+                    border-radius: 3px;
+                    padding: 12px 24px;
+                    border: 0;
+                    color: #000021;
+                    background: #7aa89c;
+                    line-height: 1.15;
+                    font-size: 16px;
+                    
+                
+}
+.add_unit_btn:hover {
+                        transition: all .1s ease;
+                        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+                    }
+
+
+
+ .view_unit_title{
+                        text-align: center;
+}
+.view_unit_container{
+    display: flex;
+    justify-content: center;
+}

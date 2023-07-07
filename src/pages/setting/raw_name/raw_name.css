@@ -1,0 +1,40 @@
+
+
+.raw_name_add{
+    display: flex;
+    justify-content: center;
+}
+.raw_name_input{
+    border: 2px solid black;
+}
+
+.raw_name_button{
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7aa89c;
+    line-height: 1.15;
+    font-size: 16px;
+    
+
+}
+.raw_name_button:hover {
+        transition: all .1s ease;
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+    }
+
+
+
+.raw_name_h1{
+    text-align: center;
+}
+.raw_name_view{
+    display: flex;
+    justify-content: center;
+}
