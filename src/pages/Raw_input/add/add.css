@@ -43,11 +43,7 @@ input, select{
     display: flex;
     justify-content: space-evenly;
 }
-.remarks{
-    width: 700px;
-    height: 40px;
-    border-radius: 10px;
-}
+
 
 .select_unit,.select_supplier{
     height: 20px;
@@ -89,3 +85,20 @@ input, select{
 .space{
     height: 15px;
 }
+
+
+alert {
+    position: relative;
+    top: 10;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.8;
+    border-radius: 5px;
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+  }

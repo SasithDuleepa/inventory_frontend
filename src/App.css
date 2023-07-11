@@ -15,4 +15,61 @@
   --form-text-color: #000000;
   --form-text-font-size: 16px;
   --form-text-font-family: Arial, sans-serif;
+
+  --table-background:rgb(204, 204, 204);
+
+  --edite_table-background:rgba(65, 65, 65, 0.458);
+  --edite-data:rgba(23, 23, 23, 0.177);
 }
+
+table{
+  margin: 10px auto;
+  overflow: scroll;
+  overflow-x: auto; /* horizontal scrolling */
+  overflow-y: visible; /* vertical overflow visible */
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color: #6b6f6b;
+  color: white;
+}
+tbody{
+  background-color: rgb(240, 240, 240);
+  border: 1px solid black;
+  
+}
+
+
+/* sub nav */
+.nav_2{
+   background-color: rgba(23, 24, 24, 0.682);
+   display: flex;
+   justify-content: space-evenly;
+   height: 50px;
+}
+.setting_nav_item_{
+  color: rgb(66, 66, 66);
+  padding: 10px;
+  
+
+}
+.setting_nav_item_active_{
+  padding: 11px;
+  border-bottom: 5px solid rgba(255, 255, 0, 0.341);
+
+}
+.nav-link_{
+  color: rgb(232, 232, 232);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  
+}
+

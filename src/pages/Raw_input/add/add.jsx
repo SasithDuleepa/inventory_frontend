@@ -14,6 +14,7 @@ export default function Add() {
     purchase_order_number:"PO-",
     quantity:"",
     unit_of_measure:"",
+    unit_price:"",
     batch_number:"",
     date_of_receipt:"",
     expiry_date:"",
@@ -39,6 +40,7 @@ const submit = async (e)=>{
       purchase_order_number:data.purchase_order_number,
       quantity:data.quantity,
       unit_of_measure:data.unit_of_measure,
+      unit_price:data.unit_price,
       batch_number:data.batch_number,
       date_of_receipt:data.date_of_receipt,
       expiry_date:data.expiry_date,
@@ -50,6 +52,21 @@ const submit = async (e)=>{
     alert(resp.data.message)
   }else{
     alert(resp.data.message)
+    setData({
+      raw_material_name:"",
+      supplier_name:"",
+      purchase_order_number:"PO-",
+      quantity:"",
+      unit_of_measure:"",
+      unit_price:"",
+      batch_number:"",
+      date_of_receipt:"",
+      expiry_date:"",
+      location:"",
+      responsible_person:"",
+      remarks:""})
+      
+
   }
   }
     
@@ -114,7 +131,7 @@ useEffect(()=>{
                   
 
                 </select>
-                {/* <input className='raw_material_name' type="text" id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/> */}
+                
                 </div>    
 
                 <div className='select_supplier'>
@@ -157,45 +174,47 @@ useEffect(()=>{
                 </div>
 
                 <div className='add_raw'>
+                <label>unit_price</label>
+                <input className='unit_price' type="number" id='unit_price' value={data.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
+                </div>
+
+
+          </div>
+          <div className='couple'>
+
+          <div className='add_raw'>
                 <label>batch_number</label>
                 <input className='batch_number' type="text" id='batch_number' value={data.batch_number} onChange={(e)=>handle(e)} placeholder='batch_number'/>
                 </div>
 
-          </div>
-          <div className='couple'>
                 <div className='add_raw'>
                 <label>date_of_receipt</label>
                 <input className='date_of_receipt' type="date" id='date_of_receipt' value={data.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
                 </div>
 
-                <div className='add_raw'>
-                <label>expiry_date</label>
-                <input className='expiry_date' type="date" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
-                </div>
+                
 
           </div>
           <div className='couple'>
           <div className='add_raw'>
+                <label>expiry_date</label>
+                <input className='expiry_date' type="date" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
+                </div>
+
+                <div className='add_raw'>
                 <label >location</label>
                 <input className='location' type="text" id='location' value={data.location} onChange={(e)=>handle(e)} placeholder='location'/>
                 </div>
 
-                <div className='add_raw'>
-                <label>responsible_person</label>
-                <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
-                </div>
+                
 
           </div>
           
-                           
-                
-                
-
-                
-
-                
-
-                
+          <div className='couple'>
+          <div className='add_raw'>
+                <label>responsible_person</label>
+                <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
+                </div>
 
                 <div className='add_remarks'>
                   <div>
@@ -204,6 +223,15 @@ useEffect(()=>{
                 </div>
 
                   </div>
+          </div>
+                
+                
+
+                
+
+                
+
+                
                 
 
                 <button onClick={(e)=> submit(e)} className='add_button_'>Add</button>

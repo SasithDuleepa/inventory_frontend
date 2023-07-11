@@ -60,22 +60,36 @@ const Create_pdf = () => {
       <table >
         <thead>
           <tr>
+          <th>production_order_number</th>
           <th>product_name</th>
-                        <th>product_description</th>
-                        {/* <th>product_price</th> */}
-                        <th>batch_no</th>
-                        <th>product_SKU</th>
+          <th>quantity_produced</th>
+
+          <th> unit_of_measure</th>
+          <th>date_time_of_production</th>
+          <th>production_line</th>
+
+          <th>responsible_person</th>
+          <th>remarks</th>
+          
+                        
+                       
                        
           </tr>
         </thead>
         <tbody>
           {inventoryData.map((item) => (
-            <tr key={item.idinventory_item_id}>
+            <tr key={item.output_id}>
+              <td>{item.production_order_number}</td>
               <td>{item.product_name}</td>
-              <td>{item.product_description}</td>
-              {/* <td>{item.product_price}</td> */}
-              <td>{item.batch_no}</td>
-              <td>{item.product_SKU}</td>
+              
+              <td>{item.quantity_produced}</td>
+              <td>{item.unit_of_measure}</td>
+              <td>{item.date_time_of_production}</td>
+              <td>{item.production_line}</td>
+              <td>{item.responsible_person}</td>
+              
+              <td>{item.remarks}</td>
+              
             </tr>
           ))}
           

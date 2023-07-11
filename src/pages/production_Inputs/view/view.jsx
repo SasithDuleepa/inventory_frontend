@@ -29,24 +29,35 @@ export default function View() {
         <table>
           <thead>
             <tr>
-              <th>raw_name</th>
-              <th>raw_no</th>
-              <th>batch no</th>
-              <th>date</th>
-              <th>qty</th>
-              <th>status</th>
+              <th>production_order_number</th>
+              <th>raw_material_name</th>
+              <th>quantity_used</th>
+              <th>unit_of_measure</th>
+              <th>batch_number</th>
+              <th>date_time_of_usage</th>
+              <th>production_line</th>
+              <th>responsible_person</th>
+              <th>scrap_waste_quantity</th>
+              <th>remarks</th>
+              <th>quantity_available</th>
             </tr>
           </thead>
           <tbody>
             {Data.map((item)=>(
               <tr key={item.idselect_raw_materials}>
+                <td>{item.production_order_number}</td>
                 <td>{item.raw_material_name}</td>
-                <td>{item.raw_no}</td>
-                <td>{item.batch_no}</td>
-                <td>{item.date}</td>
+                <td>{item.quantity_used}</td>
                 
-                <td>{item.qty}</td>
-                <td>{item.status}</td>
+                <td>{item.unit_of_measure}</td>
+                <td>{item.batch_number}</td>
+                <td>{item.date_time_of_usage}</td>
+                <td>{item.production_line}</td>
+                <td>{item.responsible_person}</td>
+                <td>{item.scrap_waste_quantity}</td>
+                <td>{item.remarks}</td>
+                <td>{item.quantity_available}</td>
+                
               </tr>
             ))}
           </tbody>

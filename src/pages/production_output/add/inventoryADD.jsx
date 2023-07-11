@@ -78,16 +78,11 @@ useEffect(()=>{
   },[])
 
 //set unit of measure
+const [measur_unit, setMeasure_unit] = useState([])
 const Units = async (e)=>{
-  const res = await Axios.get(`http://localhost:8080/product_name/get_unit_accordingToname/?product_name='${data.product_name}'`)
-  const res_data = res.data;
-  if(res_data.length !== 0){
-    setData({
-      ...data,
-      unit_of_measure:res_data[0].unit
-    })
-  }
-  
+  const res = await Axios.get(`http://localhost:8080/setting/All_productUnits`)
+  setMeasure_unit(res.data)
+
   
 }  
 useEffect(()=>{
@@ -104,8 +99,8 @@ useEffect(()=>{
         <h1 className='add_title'>product add</h1>
             <form onSubmit={(e)=> submit(e)}>
               <div >
-                
-                  <div>
+                <div className='set_1'>
+                <div>
                 <label>production_order_number</label>
                 <select className='production_order_number' id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)}>
                   <option value="">select production_order_number</option>
@@ -129,16 +124,28 @@ useEffect(()=>{
                   }
                   )}
                   </select>
-                {/* <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/> */}
+                
                 </div>
+                </div>
+                <div className='set_2'>
                 <div>
                 <label>quantity_produced</label>
                 <input className='quantity_produced' type="number" id='quantity_produced' value={data.quantity_produced} onChange={(e)=>handle(e)} placeholder='quantity_produced'/>
                 </div>
                 <div>
                 <label>unit_of_measure</label>
-                <input className='unit_of_measure' type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
+                <select  className='unit_of_measure'  id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)}>
+                  <option>select unit of measure</option>
+                  {measur_unit.map((unit,index)=>{
+                    return(
+                      <option ket={index} value={unit.unit_name}>{unit.unit_name}</option>
+                    )
+                  })}
+                </select>
+                {/* <input className='unit_of_measure' type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/> */}
                 </div>
+                </div>
+                <div className='set_3'>
                 <div>
                 <label>date_time_of_production</label>
                 <input className='date_time_of_production' type="date" id='date_time_of_production' value={data.date_time_of_production} onChange={(e)=>handle(e)} placeholder='date_time_of_production'/>
@@ -147,14 +154,22 @@ useEffect(()=>{
                 <label>production_line</label>
                 <input className='production_line' type="text" id='production_line' value={data.production_line} onChange={(e)=>handle(e)} placeholder='production_line'/>
                 </div>
+                </div>
+                <div className='set_4'>
                 <div>
                 <label>responsible_person</label>
                 <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
                 </div>
                 <div>
                 <label>remarks</label>
-                <input className='remarks' type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
+                <input  type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
+                </div>
+                
+                  
+                
+                
+                
                 
                
                 

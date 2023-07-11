@@ -263,6 +263,7 @@ export default function Select_raw_inputs() {
   }
 
   const submit = async (e) => {
+    console.log(data)
     e.preventDefault();
     try {
       const resp = await Axios.post(url, {
@@ -281,6 +282,19 @@ export default function Select_raw_inputs() {
         alert(resp.data.message);
       } else {
         alert(resp.data.message);
+        setData({
+          production_order_number: "PO-",
+    raw_material_name: "",
+    quantity_used: "",
+    unit_of_measure: "",
+    batch_number: "BATCH-",
+    date_time_of_usage: "", // Initialize as an empty string
+    production_line: "",
+    responsible_person: "",
+    scrap_waste_quantity: "",
+    remarks: ""
+
+        })
       }
     } catch (error) {
       console.error(error);
@@ -307,7 +321,7 @@ export default function Select_raw_inputs() {
   }
   useEffect(()=>{
     get_batchNo();
-  },[data.raw_material_name])
+  },[data.raw_material_name ])
 
   //get available qty according to raw batch no
   const[available_qty,setAvailable_qty] = useState([]);

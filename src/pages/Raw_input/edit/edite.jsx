@@ -7,12 +7,19 @@ export default function Edite() {
   const [search, setSearch]= useState("");
   const[serchresponse,setSearchrespose] = useState([])//data from api
   const[select,setSelect] = useState({
-    idRaw_inputs:"",
-    input_name:"",
-    input_SKU:"",
-    input_unit_price:"",
-    input_date:"",
-    input_supplier:""
+    inventory_id:"",
+    raw_material_name:"",
+    supplier_name:"",
+    purchase_order_number:"PO-",
+    quantity:"",
+    unit_of_measure:"",
+    unit_price:"",
+    batch_number:"",
+    date_of_receipt:"",
+    expiry_date:"",
+    location:"",
+    responsible_person:"",
+    remarks:""
   
   })
   
@@ -38,12 +45,19 @@ export default function Edite() {
       const res = await Axios.get(`http://localhost:8080/raw_input/search_a_product/?Raw_id=${raw_id}`)
       const response_data = res.data[0]
       setSelect({
-        input_name:response_data.input_name,
-        input_SKU:response_data.input_SKU,
-        input_unit_price:response_data.input_unit_price,
-        input_date:response_data.input_date,
-        input_supplier:response_data.input_supplier,
-        idRaw_inputs:response_data.idRaw_inputs
+        inventory_id:response_data.inventory_id,
+        raw_material_name:response_data.raw_material_name,
+        supplier_name:response_data.supplier_name,
+    purchase_order_number:response_data.purchase_order_number,
+    quantity:response_data.quantity,
+    unit_of_measure:response_data.unit_of_measure,
+    unit_price:response_data.unit_price,
+    batch_number:response_data.batch_number,
+    date_of_receipt:response_data.date_of_receipt,
+    expiry_date:response_data.expiry_date,
+    location:response_data.location,
+    responsible_person:response_data.responsible_person,
+    remarks:response_data.remarks,
       })
       console.log(select)
       
@@ -57,31 +71,32 @@ export default function Edite() {
     const newdata={...select}
     newdata[e.target.id]= e.target.value
     setSelect(newdata)
-    window.location.reload()
+    // window.location.reload()
     
 }
 
 
 
 const Edit =async()=>{
-  const id = select.idRaw_inputs;
+  const id = select.inventory_id;
   const res = await Axios.put(`http://localhost:8080/raw_input/update_raw/?Raw_id=${id}`,select)
-  console.log(res.data)
-  window.location.reload()
+  console.log(select)
+  // window.location.reload()
 }
 const Delete =async()=>{
-  const id = select.idRaw_inputs;
+  const id = select.inventory_id;
   const res = await Axios.delete(`http://localhost:8080/raw_input/delete_raw/?Raw_id=${id}`,)
   console.log(res.data)
-  window.location.reload()
+  // window.location.reload()
 
   
 }
   return (
     <div className='Edit_main_container'>
-        <h1 className='Edit_title'>Edite / Delete</h1>
+        
 
         <div className='Edit_main'> 
+        <h1 className='Edit_title'>Edite / Delete</h1>
         <div className='search_bar'><input className='search_input' type='search' onChange={(e)=>searchHandler(e)}  placeholder='Search'/></div>
  
 
@@ -90,22 +105,36 @@ const Delete =async()=>{
             <thead>
               <tr>
                 <th>Raw input name</th>
-                <th>Quntity</th>
-                <th>Price</th>
-                <th>date</th>
-                <th>supplier</th>
+                <th>supplier_name</th>
+                <th>purchase_order_number</th>
+                <th>quantity</th>
+                <th>unit_of_measure</th>
+                <th>unit_price</th>
+                <th>batch_number</th>
+                <th>date_of_receipt</th>
+                <th>expiry_date</th>
+                <th>location</th>
+                <th>responsible_person</th>
+                <th>remarks</th>
                 <th>select</th>
               </tr>
             </thead>
             <tbody>
               {serchresponse.map((item) => (
                 <tr key={item.idRaw_inputs}>
-                  <td>{item.input_name}</td>
-                  <td>{item.input_SKU}</td>
-                  <td>{item.input_unit_price}</td>
-                  <td>{item.input_date}</td>
-                  <td>{item.input_supplier}</td>
-                  <th><button onClick={(e)=>SelectHandler(e)} value={item.idRaw_inputs}>Select</button></th>
+                  <td>{item.raw_material_name}</td>
+                  <td>{item.supplier_name}</td>
+                  <td>{item.purchase_order_number}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.unit_of_measure}</td>
+                  <td>{item.unit_price}</td>
+                  <td>{item.batch_number}</td>
+                  <td>{item.date_of_receipt}</td>
+                  <td>{item.expiry_date}</td>
+                  <td>{item.location}</td>
+                  <td>{item.responsible_person}</td>
+                  <td>{item.remarks}</td>
+                  <th><button onClick={(e)=>SelectHandler(e)} value={item.inventory_id}>Select</button></th>
 
                   </tr>))}
             </tbody>
@@ -113,32 +142,60 @@ const Delete =async()=>{
         </div>
 
         <div className='edite_main'>
-          <div className='set_1'>
           <div>
-                <label>raw material name</label>
-                <input className='input_name' type="text" id='input_name' value={select.input_name} onChange={(e)=>handle(e)} placeholder='input_name'/>
+          <div>
+                <label>raw_material_name</label>
+                <input className='raw_material_name' type="text" id='raw_material_name' value={select.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/>
                 </div>
                 <div>
-                <label>stock keeping units</label>
-                <input className='input_name' type="text" id='input_SKU' value={select.input_SKU} onChange={(e)=>handle(e)} placeholder='input_name'/>
+                <label>supplier_name</label>
+                <input className='supplier_name' type="text" id='supplier_name' value={select.supplier_name} onChange={(e)=>handle(e)} placeholder='supplier_name'/>
                 </div>
                 <div>
-                <label>unit price</label>
-                <input className='input_name' type="text" id='input_unit_price' value={select.input_unit_price} onChange={(e)=>handle(e)} placeholder='input_name'/>
+                <label>purchase_order_number</label>
+                <input className='purchase_order_number' type="text" id='purchase_order_number' value={select.purchase_order_number} onChange={(e)=>handle(e)} placeholder='purchase_order_number'/>
                 </div>
 
-          </div>
-          <div className='set_2'>
-          <div>
-                <label>supplier</label>
-                <input className='input_name' type="text" id='input_supplier' value={select.input_supplier} onChange={(e)=>handle(e)} placeholder='input_name'/>
+        
+                <div>
+                <label>quantity</label>
+                <input className='quantity' type="text" id='quantity' value={select.quantity} onChange={(e)=>handle(e)} placeholder='quantity'/>
                 </div>
                 <div>
-                <label>date</label>
-                <input className='input_name' type="text" id='input_date' value={select.input_date} onChange={(e)=>handle(e)} placeholder='input_name'/>
+                <label>unit_of_measure</label>
+                <input className='unit_of_measure' type="text" id='unit_of_measure' value={select.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
+                </div>
+                <div>
+                <label>unit_price</label>
+                <input className='unit_price' type="text" id='unit_price' value={select.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
+                </div>
+                <div>
+                <label>batch_number</label>
+                <input className='batch_number' type="text" id='batch_number' value={select.batch_number} onChange={(e)=>handle(e)} placeholder='batch_number'/>
+                </div>
+                <div>
+                <label>date_of_receipt</label>
+                <input className='date_of_receipt' type="text" id='date_of_receipt' value={select.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
+                </div>
+                <div>
+                <label>expiry_date</label>
+                <input className='expiry_date' type="text" id='expiry_date' value={select.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
+                </div>
+                <div>
+                <label>location</label>
+                <input className='location' type="text" id='location' value={select.location} onChange={(e)=>handle(e)} placeholder='location'/>
+                </div>
+                <div>
+                <label>responsible_person</label>
+                <input className='responsible_person' type="text" id='responsible_person' value={select.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
+                </div>
+                <div>
+                  <label>remarks</label>
+                  <input className='remarks' type="text" id='remarks' value={select.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
 
-                <button onClick={Edit} className='edite_button'>Edite</button>
+
+                <button onClick={Edit} className='edite_button'>Update</button>
                 <button onClick={Delete} className='delete_button'>Delete</button>
 
           </div>

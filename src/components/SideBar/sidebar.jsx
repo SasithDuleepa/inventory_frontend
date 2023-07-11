@@ -23,6 +23,7 @@ export default function Sidebar() {
     const[supplier, setSupplier] = useState('link_li')
     const[customer, setCustomer] = useState('link_li')    
     const[setting, setSetting] = useState('link_li')
+    const[reports, setReports] = useState('link_li')
     
    
 
@@ -45,6 +46,9 @@ export default function Sidebar() {
             setSupplier('link_li_clicked')        
         }else if(currentPath === "/setting"){
             setSetting('link_li_clicked')
+        }else if(currentPath === "/reports"){
+            setCustomer('link_li_clicked')
+        
         }
     },[])
 
@@ -86,7 +90,7 @@ export default function Sidebar() {
                     <li className={Expenses}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/expenses" className={navlinknames}>Expenses</a></div></div></li>
                     <li className={supplier}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/supplier" className={navlinknames}>Suppliers</a></div></div></li>
                     <li className={setting}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/setting" className={navlinknames}>Setting</a></div></div></li>
-                    
+                    <li className={reports}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/reports" className={navlinknames}>Reports</a></div></div></li>
                     
                 </ul>
 

@@ -1,11 +1,9 @@
-.Edit_main_container{
-    background-color: rgb(221, 193, 156);
-}
+
 .Edit_title{
     text-align: center;
 }
 .Edit_main{
-    background-color: aqua;
+    background-color:var(--edite_table-background);
     margin: 10px 20px 10px 20px ;
     border-radius: 10px;
 }
@@ -22,13 +20,16 @@
 .Edit_table{
     margin: 10px 20px 30px 20px;
     border-radius: 10px;
-    background-color: blue;
+    overflow: scroll;
+    
 }  
 
 .edite_main{
-    background-color: antiquewhite;
+    background-color: var(--edite-data);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+   
+   
     padding: 10px;
     overflow: hidden;
 }

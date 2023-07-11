@@ -1,10 +1,14 @@
 .Sidebar{
-    position: fixed;
+    position:fixed;
+    overflow: hidden;
+    z-index: 1;
     
     
 }
 
 .nav-bar{
+    position: fixed;
+    overflow: hidden;
     margin-top: -20px;
     width: 50px;
     height: 100vh;

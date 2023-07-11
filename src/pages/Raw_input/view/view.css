@@ -1,15 +1,18 @@
 .raw_view{
-    background-color: rgb(123, 218, 123);
+    background-color: var(--table-background);
 }
 
+.table-responsive{
+    overflow: scroll;
+}
 .text-center{
     text-align: center;
 }
-.container{
+/* .container{
     background-color: aqua;
     margin: 10px 20px 10px 20px;
     border-radius: 10px;
-}
+} */
 /* .table-responsive{
     background-color: aquamarine;
     margin: 10px auto;

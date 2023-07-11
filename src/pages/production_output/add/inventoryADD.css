@@ -1,5 +1,5 @@
 .add_inventory{
-    background-color: #879ace;
+    background-color: rgb(155, 185, 211);
 }
 .add{
     background-color:var(--form-backgroung-color);
@@ -11,53 +11,24 @@
 .add_title{
     text-align: center;
 }
-.main_set{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 label{
     font-family: 'Kablammo';
     font-size: 22px;
     width: 1000px;
     margin: 20px 10px 20px 10px;
     color: blueviolet;
+    text-align:left;
 }
 
-.set_1{
+.set_1,.set_2,.set_3, .set_4{
+    display: flex;
+    justify-content: space-evenly;
     
 }
 
-.product_name_input{
-    height: 30px;
-    border: none;
-    margin: 10px;
-}
-.description_input{
-    height: 30px;
-    margin: 20px 10px 10px 10px;
-}
 
-.set_2{
 
-}
-.units_input{
-    margin: 10px;
-    height: 30px;
-    border: none
-}
-.price_input{
-    margin: 10px;
-    height: 30px;
-    border: none
-}
-.supplier_input{
-    margin: 10px;
-    height: 30px;
-    border: none
-}
-.product_name_input,.supplier_input, .price_input,.units_input,.description_input,.price_input::placeholder{
-    text-align: center;
-}
 
 .add_button__{
     background-color: #c2fbd7;
@@ -76,7 +47,9 @@ label{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 20px 10px 10px 80px;
+  position: relative;
+  margin: 20px;
+  left: 50%;
 }
 .add_button__:hover {
       box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;

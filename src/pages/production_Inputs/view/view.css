@@ -1,12 +1,13 @@
 .view_title{
     text-align: center;
-}
-.view_table{
-    background-color: aqua;
-    margin: 10px 20px 10px 20px;
-    border-radius: 10px;
+    
 }
 
+
 .view_container{
-    background-color: rgb(196, 170, 135);
+    background-color: var(--table-background);
+}
+
+.view_table{
+    overflow: scroll;
 }

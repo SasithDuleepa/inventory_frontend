@@ -1,9 +1,11 @@
-.inventory_edite{
-    background-color:rgb(218, 194, 162);
-}
+
 .product_edite{
     text-align: center;
 }
+
+/* .inventoryedite{
+    background-color: var(--edite_table-background);
+} */
 .search{
     height: 30px;
     width: 250px;
@@ -14,33 +16,28 @@
     left: 35%;
 }
 .search_result{
-    background-color: antiquewhite;
+    overflow: scroll;
     border-radius: 8px;
 }
 .search_table{
     border-collapse: collapse;
     
 }
-table{
-    position: relative;
-    width: 100%;
-}
-th,td{
-    border: 0px solid black;
-    padding: 5px;
-    text-align: center;
-}
-thead th {
-  /* width: 80%; */
+.add_{
+    background-color: var(--edite_table-background);
 }
 
 
 
 
-.main_set{
+
+
+
+.main_set_{
     display: flex;
     justify-content: space-evenly;
     margin: 30px 10px 10px 10px;
+    /* background-color: var(--edite-data); */
 }
 .set_1{
 

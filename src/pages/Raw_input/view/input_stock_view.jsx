@@ -35,26 +35,35 @@ export default function Input_stock_view() {
               <thead>
                 <tr>
                  
-                  <th>Raw_input_name</th>
-                  <th>Raw_no</th>
-                  <th>Raw_input_quantity</th>
-                  <th>Raw_input_price</th>
-                  <th>total_price</th>
-                  <th>Raw_input_date</th>
-                  <th>Raw_input_supplier_name</th>
+                <th>Raw input name</th>
+                <th>supplier_name</th>
+                <th>purchase_order_number</th>
+                <th>quantity</th>
+                <th>unit_of_measure</th>
+                <th>unit_price</th>
+                <th>batch_number</th>
+                <th>date_of_receipt</th>
+                <th>expiry_date</th>
+                <th>location</th>
+                <th>responsible_person</th>
+                <th>remarks</th>
                 </tr>
               </thead>
               <tbody>
                 {Raw_input_data.map((item)=>(
                   <tr key={item.idRaw_inputs}>
-                    <td>{item.input_name}</td>
-                    <td>{item.raw_no}</td>
-                    <td>{item.input_SKU}</td>
-                   
-                    <td>{item.input_unit_price}</td>
-                    <td>{item.input_SKU*item.input_unit_price}</td>
-                    <td>{item.input_date}</td>
-                    <td>{item.input_supplier}</td>
+                    <td>{item.raw_material_name}</td>
+                  <td>{item.supplier_name}</td>
+                  <td>{item.purchase_order_number}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.unit_of_measure}</td>
+                  <td>{item.unit_price}</td>
+                  <td>{item.batch_number}</td>
+                  <td>{item.date_of_receipt}</td>
+                  <td>{item.expiry_date}</td>
+                  <td>{item.location}</td>
+                  <td>{item.responsible_person}</td>
+                  <td>{item.remarks}</td>
                   </tr>
                 ))}
               </tbody>

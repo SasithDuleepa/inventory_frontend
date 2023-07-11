@@ -1,6 +1,7 @@
 .add_sale_main{
     
     padding: 20px;
+    background-color: rgb(155, 185, 211);
 }
 .add_sale_h1{
     text-align: center;
@@ -79,23 +80,22 @@
 
 
 
-table{
-    margin: 50px 10px 10px 10px;
+/* table{
+    overflow: hidden;
+
+   
     border: 1px solid black;
     
-}
-thead{
+} */
+/* thead{
     background-color: rgb(215, 215, 215);
-}
+    overflow: hidden;
+} */
 th{
     
     border: 1px solid black;
 }
-tbody{
-    background-color: rgb(240, 240, 240);
-    border: 1px solid black;
-    
-}
+
 tr{
     border: 1px solid black;
     
@@ -110,7 +110,9 @@ td{
 .bill_edit_btn{
     margin-left: 10px;
 }
-
+.bill_table{
+  width: 100%;
+}
 
 
 

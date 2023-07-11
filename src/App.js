@@ -15,6 +15,13 @@ import Index_setting from "./pages/setting/layout";
 
 import Index_supplier from "./pages/Supplier/layout";
 
+import Index_reports from "./pages/Reports/layout/Index";
+
+
+
+
+import Edite_Input_raw from "./pages/Edite_data/edite_raw_input/edite_Input_raw";
+
 
 
 function App() {
@@ -34,6 +41,8 @@ function App() {
           <Route exact path="/expenses" component={Index_expenses}/>
           <Route exact path="/Supplier" component={Index_supplier}/>
           <Route exact path="/setting" component={Index_setting}/>
+
+          <Route exact path="/reports" component={Index_reports}/>
 
           
         </Switch>

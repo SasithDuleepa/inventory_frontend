@@ -49,7 +49,7 @@ useEffect(()=>{get_available_products()},[])
 //set PO_no
 const[PO_no, setPO_no] = useState([])
 const get_PO_no = async()=>{
-  const res = await Axios.get(`http://localhost:8080/products/searchone/?product_name=${data.product_name}`)
+  const res = await Axios.get(`http://localhost:8080/products//po_no/?product_name=${data.product_name}`)
   // console.log(res.data)
   setPO_no(res.data)}
 useEffect(()=>{
@@ -123,7 +123,7 @@ const edite_handler = (e, index, item) => {
   e.preventDefault();
   setData({
     product_name: item.product_name,
-    production_order_number: item.production_order_number,
+    
     quantity_sold: item.quantity_sold,
     unit_price: item.unit_price,
   });
@@ -135,8 +135,9 @@ const edite_handler = (e, index, item) => {
 
 
 const AddBill = async()=>{
+  console.log(data)
   const res =await Axios.post('http://localhost:8080/sales/save',{
-      PO_no:data.production_order_number,
+    production_order_number:data.production_order_number,
       sale_date:data_const.sale_date,
       customer_name:data_const.customer_name,
       payment_method:data_const.payment_method,
@@ -232,7 +233,7 @@ const subtotal = bill.reduce((total, item) => {
                 
                 
                 <div>
-                  <table>
+                  <table className='bill_table'>
                     <thead>
                       <th>product_name</th>
                       <th>quantity_sold</th>

@@ -1,0 +1,131 @@
+/* supplier wise */
+.raw_data_acc_name_h2{
+    text-align: center;
+}
+.raw_data_acc_name_input{
+    border: 2px solid black;
+}
+
+
+
+
+/* material wise */
+.raw_data_acc_name_report{
+    text-align: center;
+}
+.raw_data_acc_name_div{
+    padding: 20px;
+    
+}
+.raw_data_acc_name_label{
+    color: black;
+    font-weight: 600;
+    
+    margin-left: 10px;
+}
+.raw_data_acc_name_select{
+    border: 2px solid black;
+}
+
+.raw_data_acc_name_table{
+    width: 1500px;
+   ;
+    overflow: scroll;
+    margin: 10px auto 10px 20px;
+}
+.raw_data_acc_name_pdf{
+   
+}
+
+/* pdf button */
+.raw_data_acc_name_pdf {
+    background: #ffffff;
+    border: solid 1px #e6e6e6;
+    border-radius: 2px;
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    margin: 5px;
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    width: 100px;
+    right: 100px;
+}
+
+.raw_data_acc_name_pdf span {
+    background: #f2594b;
+    border-radius: 4px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: normal;
+    padding: 5px 10px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.raw_data_acc_name_pdf span:last-child {
+    margin-left: -20px;
+}
+
+.raw_data_acc_name_pdf:before,
+.raw_data_acc_name_pdf:after {
+    background: #ffffff;
+    border: solid 3px #9fb4cc;
+    border-radius: 4px;
+    content: '';
+    display: block;
+    height: 35px;
+    left: 50%;
+    margin: -17px 0 0 -12px;
+    position: absolute;
+    top: 50%;
+    /*transform:translate(-50%,-50%);*/
+    
+    width: 25px;
+}
+
+.raw_data_acc_name_pdf:hover:before,
+.raw_data_acc_name_pdf:hover:after {
+    background: #e2e8f0;
+}
+/*a:before{transform:translate(-30%,-60%);}*/
+
+.raw_data_acc_name_pdf:before {
+    margin: -23px 0 0 -5px;
+}
+
+.raw_data_acc_name_pdf:hover {
+    background: #e2e8f0;
+    border-color: #9fb4cc;
+}
+
+.raw_data_acc_name_pdf:active {
+    background: #dae0e8;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, .25);
+}
+
+.raw_data_acc_name_pdf span:first-child {
+    display: none;
+}
+
+.raw_data_acc_name_pdf:hover span:first-child {
+    display: inline-block;
+}
+
+.raw_data_acc_name_pdf:hover span:last-child {
+    display: none;
+}
+/* custom code for the demo */
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+

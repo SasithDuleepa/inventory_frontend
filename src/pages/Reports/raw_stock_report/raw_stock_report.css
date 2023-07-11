@@ -1,0 +1,8 @@
+.raw_data_table{
+    width: 1500px;
+    overflow: scroll;
+    margin-left: 60px;
+}
+.raw_data_acc_name{
+    text-align: center;
+}
