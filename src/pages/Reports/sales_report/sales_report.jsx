@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import './sales_report.css'
 
 import Sale_acc_date from './sale_acc_date';
 import Sale_acc_date_range from './sale_acc_date_range';

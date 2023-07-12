@@ -90,7 +90,7 @@ const[tot_rawSupplier, setTot_rawSupplier] = useState('loading..')
                     </div>
                 </div>
 
-                <div className='dashboad-summery-item-4'>
+                {/* <div className='dashboad-summery-item-4'>
                     <div className='dashboad-summery-item-4-tot-orders'>
                         <p className='dashboad_p'>Total Orders</p>
                         <p className='dashboad_p_'>2</p>                        
@@ -98,7 +98,7 @@ const[tot_rawSupplier, setTot_rawSupplier] = useState('loading..')
                     <div className='dashboad-summery-item-4-icon'>
                         <img className='order-img' src={Oders} alt=""/>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div>

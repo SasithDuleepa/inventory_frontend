@@ -131,17 +131,17 @@ const Create_pdf = () => {
         <div className='raw_data_acc_name_table'>
         <table>
               <thead>
-                <th>raw_material_ name</th>
-                <th>batch_number</th>
-                <th>purchase_order_number</th>
-                <th>quantity</th>
-                <th>availability_status</th>
-                <th>unit_of_measure</th>
-                <th>date_of_receipt</th>
-                <th>expiry_date</th>
-                <th>supplier_name</th>
-                <th>responsible_person</th>
-                <th>remarks</th>
+                <th>Raw Material Name</th>
+                <th>Batch Number</th>
+                <th>Purchase Order Number</th>
+                <th>Quantity</th>
+                <th>Availability Status</th>
+                <th>Unit of Measure</th>
+                <th>Date of Receipt</th>
+                <th>Expiry Date</th>
+                <th>Supplier Name</th>
+                <th>Responsible Person</th>
+                <th>Remarks</th>
 
               </thead>
              

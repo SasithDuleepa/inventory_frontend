@@ -108,23 +108,23 @@ export default function Date_wise() {
       <div className='raw_data_acc_name_div'>
         <input className='raw_data_acc_name_input' id='start_date' onChange={(e)=>handlechange(e)} value={data.start_date} type="date" />
         <input  className='raw_data_acc_name_input' id='end_date' onChange={(e)=>handlechange(e)} value={data.end_date} type="date" />
-        <button onClick={handlesubmit}>Submit</button>
+        <button className='search_button' onClick={handlesubmit}>Search</button>
       </div>
       <div className='raw_data_acc_name_table'>
       <table>
              <thead>
   <tr>
-    <th>raw_material_name</th>
-    <th>batch_number</th>
-    <th>purchase_order_number</th>
-    <th>quantity</th>
-    <th>availability_status</th>
-    <th>unit_of_measure</th>
-    <th>date_of_receipt</th>
-    <th>expiry_date</th>
-    <th>supplier_name</th>
-    <th>responsible_person</th>
-    <th>remarks</th>
+    <th>Raw Material Name</th>
+    <th>Batch Number</th>
+    <th>Purchase Order Number</th>
+    <th>Quantity</th>
+    <th>Availability Status</th>
+    <th>Unit of Measure</th>
+    <th>Date of Receipt</th>
+    <th>Expiry Date</th>
+    <th>supplier Name</th>
+    <th>Responsible Person</th>
+    <th>Remarks</th>
   </tr>
 </thead>
              

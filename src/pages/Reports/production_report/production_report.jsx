@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Production_report() {
   return (
-    <div>Production_report</div>
+    <div>
+      <h1>production costs, other costs ......</h1>
+    </div>
   )
 }

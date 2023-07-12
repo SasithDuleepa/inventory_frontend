@@ -87,7 +87,7 @@ export default function Sidebar() {
                     <li className={sales}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/sales' className={navlinknames}>Sale</a></div></div></li>
                     
                     <li className={production}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/Production" className={navlinknames}>production</a></div></div></li>
-                    <li className={Expenses}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/expenses" className={navlinknames}>Expenses</a></div></div></li>
+                    {/* <li className={Expenses}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/expenses" className={navlinknames}>Expenses</a></div></div></li> */}
                     <li className={supplier}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/supplier" className={navlinknames}>Suppliers</a></div></div></li>
                     <li className={setting}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/setting" className={navlinknames}>Setting</a></div></div></li>
                     <li className={reports}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/reports" className={navlinknames}>Reports</a></div></div></li>

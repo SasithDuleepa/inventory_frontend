@@ -46,7 +46,7 @@ const ProductStock = () => {
   return (
     <div className="chart">
       <h2 className='product_stock_title'>Product stock level</h2>
-      <Chart options={state.options} series={state.series} type="donut" width="380" />
+      <Chart options={state.options} series={state.series} type="donut" width="425" />
     </div>
   );
 };

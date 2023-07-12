@@ -1,0 +1,42 @@
+/* sale_acc to date range */
+.date_range_container{
+    margin: 50px auto 20px 100px;
+}
+.date_range_label{
+    color: black;
+    font-weight: 600;
+}
+.date_range_input{
+    border:2px solid black;
+}
+
+/* date */
+.raw_data_acc_name_div{
+     margin: 40px auto 60px 30px;
+}
+
+/* product */
+
+
+
+/* all */
+.search_button{
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #7aa89c;
+    line-height: 1.15;
+    font-size: 16px;
+    
+
+}
+.search_button:hover {
+        transition: all .1s ease;
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+    }
