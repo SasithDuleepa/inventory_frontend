@@ -88,7 +88,7 @@ export default function Index_setting() {
     setShowComponent3(false);
   }
   return (
-    <div>
+    <div className='setting_container'>
      
       <div>
          <div className='setting_nav'>

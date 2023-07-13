@@ -1,0 +1,9 @@
+.raw_data_acc_name_{
+    text-align: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.raw_data_acc_name_table_table_{
+  width: 50px;
+}

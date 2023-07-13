@@ -32,12 +32,12 @@ export default function Product_input_units() {
   return (
     <div>
       <div >
-      <h1 className='product_units_title'>add product units</h1>
+      <h1 className='product_units_title'>Add product units</h1>
         <div className='product_units_container'>
           <div>
-          <label>product unit name</label>
+          <label className='product_units_label'>product unit name</label>
         <input className='product_units_input' type="text" placeholder='product unit name' value={unit_name} onChange={(e)=>changehandler(e)}/>
-        <button className='product_units_button' onClick={handlesubmit}>add</button>
+        <button className='product_units_button' onClick={handlesubmit}>Add</button>
           </div>
         
 

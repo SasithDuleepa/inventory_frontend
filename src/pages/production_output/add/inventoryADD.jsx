@@ -93,10 +93,11 @@ useEffect(()=>{
   return (
     <div className='add_inventory'>
       <div className='space'></div>
+      <h1 className='add_title'>product add</h1>
         
         <div className='add'>
 
-        <h1 className='add_title'>product add</h1>
+        
             <form onSubmit={(e)=> submit(e)}>
               <div >
                 <div className='set_1'>
@@ -115,7 +116,7 @@ useEffect(()=>{
                 </div>
                 <div>
                 <label>product_name</label>
-                <select className='product_name' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
+                <select className='' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
                   <option value="">select product_name</option>
                   {product_name.map((product_name, index)=>{
                     return(

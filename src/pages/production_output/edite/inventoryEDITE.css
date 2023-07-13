@@ -1,6 +1,8 @@
 
 .product_edite{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);;
 }
 
 /* .inventoryedite{
@@ -15,14 +17,14 @@
     margin: 10px auto 10px auto;
     left: 35%;
 }
-.search_result{
+/* .search_result{
     overflow: scroll;
     border-radius: 8px;
-}
-.search_table{
+} */
+/* .search_table{
     border-collapse: collapse;
     
-}
+} */
 .add_{
     background-color: var(--edite_table-background);
 }

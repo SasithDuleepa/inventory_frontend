@@ -28,9 +28,9 @@ export default function Input_stock_view() {
   
   return (
     <div className='raw_view'>
-        <h1 className="text-center">Input_stock_view</h1>
-        <div className="container">
-          <div className="table-responsive">
+        <h1 className="text-center">Input Stock View</h1>
+        <div >
+          <div className="table_responsive">
             <table>
               <thead>
                 <tr>

@@ -124,7 +124,7 @@ export default function Matireal_wise() {
     
   return (
     <div>
-        <h2 className='raw_data_acc_name_report'> matireal wise raw input report</h2>
+        <h2 className='raw_data_acc_name_report'> Matireal Wise Raw Input Report</h2>
         <div className='raw_data_acc_name_div'>
         <label className='raw_data_acc_name_label'>raw input name:</label>
           <select className='raw_data_acc_name_select' value={raw_name} onChange={(e)=>rawName_handler(e)}>

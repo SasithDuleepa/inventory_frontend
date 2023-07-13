@@ -1,16 +1,18 @@
 .add_page_raw{
-    background-color: rgb(155, 185, 211);
+    background-color:var(--background-color);
 }
 .add_title{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.main_add{
-    
-   
+.main_add{   
     background-color: var(--form-backgroung-color);
-    margin: 10px 20px 10px 20px;
+    margin: 10px 40px 10px 40px;
     border-radius: 10px;
-    
+    padding: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
    
 }
@@ -22,21 +24,28 @@
 label{
     font-family: var(--form-text-font-family);
     font-size: var(--form-text-font-size);
-    
+    color: black;
+    font-weight: 600;
     width: 200px;
     text-align: right;
     position: relative;
 }
 input, select{
     width: 250px;
+    text-align: center;
     
+}
+select{
+    height: 30px;
+    margin-top: 10px;
 }
 .add_raw{
     display: flex;
     justify-content: space-between;
 }
 .raw_material_name_select{
-    height: 20px;
+    height: 30px;
+    margin-top: 10px;
 }
 .add_remarks{
     

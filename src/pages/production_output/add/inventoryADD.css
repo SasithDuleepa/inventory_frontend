@@ -1,5 +1,5 @@
 .add_inventory{
-    background-color: rgb(155, 185, 211);
+    background-color: var(--background-color);
 }
 .add{
     background-color:var(--form-backgroung-color);
@@ -27,7 +27,9 @@ label{
     
 }
 
-
+.product_name_{
+    margin-bottom: 10px;
+}
 
 
 .add_button__{

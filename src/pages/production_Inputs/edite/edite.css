@@ -3,6 +3,8 @@
 } */
 .edite_h1{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .edite_div{
     background-color: var(--edite_table-background);

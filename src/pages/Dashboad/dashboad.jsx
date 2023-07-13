@@ -54,7 +54,7 @@ const[tot_rawSupplier, setTot_rawSupplier] = useState('loading..')
   
   }) 
   return (
-    <div>
+    <div className='Dashboad'>
         <h1 className='dashboad-title'>Inventory Management Dashboad</h1>
 
         <div className='dashboad'>

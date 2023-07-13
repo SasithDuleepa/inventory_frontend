@@ -100,9 +100,9 @@ export default function Product_stock_report() {
   };
   return (
     <div>
-      <h1 className='raw_data_acc_name'>Product_stock_report</h1>
-      <div>
-        <table>
+      <h1 className='raw_data_acc_name_'>Product_stock_report</h1>
+      <div className='raw_data_acc_name_table'>
+        <table className='raw_data_acc_name_table_table_'>
           <thead>
             <th>product Name</th>
             <th>Available Quantity</th>

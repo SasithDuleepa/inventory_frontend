@@ -1,18 +1,27 @@
+.setting_container{
+    background-color:var(--background-color) ;
+}
+
 .setting_nav{
-    background-color: rgb(119, 119, 119);
+    background-color:var(--primary-color);
     height: 50px;
     display: flex;
     justify-content: space-evenly;
-    margin-left: -10px;
+    margin-left: -60px;
 }
 .setting_nav_item{
-    background-color: rgba(0, 0, 0, 0.147);
+    /* background-color: rgba(0, 0, 0, 0.147); */
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.099);
     height:70% ;
     margin-top: 5px;       
 }
 
 .setting_nav_item_active{
-    border-bottom: 4px solid rgba(0, 0, 0, 0.256);
+    /* border-bottom: 4px solid rgba(0, 0, 0, 0.256); */
+  
+    
+    /* border: 3px solid black; */
     height:70% ;
     margin-top: 5px;
 }

@@ -1,12 +1,28 @@
 .product_name{
+    padding-top: 20px;
+    padding-bottom: 30px;
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .product_name_container{
     display: flex;
+    width: max-content;
+    padding: 20px 40px 20px 40px;
     justify-content: center;
+    background-color: rgba(144, 144, 144, 0.222);
+    margin: 0px auto;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.product_name_label{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
 }
 .product_name_input{
-    border: 2px solid black;
+    border: 1px solid black;
+    text-align: center;
 }
 
 
@@ -30,8 +46,21 @@
         transition: all .1s ease;
         box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
     }
-
-
+.product_name_{
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.product_name_container_view{
+        display: flex;
+        width: max-content;
+        justify-content: center;
+        background-color: rgba(144, 144, 144, 0.222);
+        margin: 0px auto;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
 .product_name_container{
     display: flex;
     justify-content: center;

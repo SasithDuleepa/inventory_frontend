@@ -29,16 +29,16 @@ export default function Raw_units() {
  useEffect(()=>{ view_unit()},[]) 
   return (
     <div>
-        <h1 className='add_unit_title'>add Raw units</h1>
+        <h1 className='add_unit_title'>Add Raw Units</h1>
         <div className='add_unit_container'>
           <div>
-             <label>enter unit name</label>
+             <label className='add_unit_label'>enter unit name</label>
              <input className='add_unit_input'  id='unit' value={unit} onChange={(e)=>handlechange(e)} type='text' placeholder='units'/>
-             <button className='add_unit_btn' onClick={(e)=>AddHandler(e)}>add</button>
+             <button className='add_unit_btn' onClick={(e)=>AddHandler(e)}>Add</button>
           </div>
         </div>
 
-        <h1 className='view_unit_title'>view Raw units</h1>
+        <h1 className='view_unit_title'>View Raw units</h1>
         <div className='view_unit_container'>
           {units.map((unit)=>{
             return(

@@ -1,53 +1,54 @@
 .Sidebar{
+    margin-top: 10%;
     position:fixed;
     overflow: hidden;
     z-index: 1;
-    
-    
+
 }
 
 .nav-bar{
     position: fixed;
     overflow: hidden;
-    margin-top: -20px;
+    margin-top: -190px;
     width: 50px;
     height: 100vh;
-    color: rgba(37, 37, 37, 0.505);
-    background-color: rgb(49, 49, 49);
+    /* border-radius: 0px 15px 15px 0;     */
+    background-color:rgba(0, 28, 48);
     overflow: hidden;
+    transition: width 0.3s ease;
+    color: aquamarine;
 }
 .nav-bar-toggle{
-    
     width: 150px;
-    height: 100vh;
+    height: 80vh;
     color: rgb(0, 0, 0);
     background-color: rgb(49, 49, 49);
 }
 .nav-bar:hover{
-    width: 150px;
-    height: 100vh;
+    width: 150px;    
     color: aquamarine;
-    background-color: rgb(33, 33, 33);
+    background-color:var(--primary-color);
     position: fixed;
+
+}
+.nav-menu{
+    margin-top: 80px;
+    padding: 0px 5px 15px 5px;   
     
+    overflow: hidden;
 }
 
 
 .head{
     width: 70%;
     height: 5vh;
-    background-color: aqua;
-    top: 10px;
-    
-    margin: 10px auto 10px auto;
+    background-color: rgba(0, 255, 255, 0.229);
+    backdrop-filter: blur(50px);
+    top: 10px;    
+    margin: 10px auto -10px auto;
 }
 
-.nav-menu{
-    
-    height: 70vh;
-    /* background-color: rgb(237, 16, 16); */
-    margin: 0 0px 0 0;
-}
+
 
 .Nav-icon-on{
     margin-left: 85%;
@@ -57,14 +58,18 @@
 
 ul{
     list-style: none;
-    margin:20px 0px 0 -27px;
+    margin:20px 0px 0 -40px;
     
 }
 .link_li{
     padding: 7px;
-    margin: 3px;
-    background-color: rgb(140, 140, 140);
+    margin: 0px;
+   
+    /* border: 2px solid var(--secondary-color); */
     border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.099);
+
+    backdrop-filter: blur(50px);
 }
 .link_li:hover{
     background-color: rgb(119, 119, 119);
@@ -72,30 +77,41 @@ ul{
 .link_li_clicked{
     padding: 7px;
     margin: 3px;
-    background-color: rgb(189, 189, 189);
+    /* background-color: var(--accent-color); */
     border-radius: 3px;
+    /* color: rgb(1, 11, 20); */
+    /* background-color:var( --background-color); */
+    
 }
 .link-icon{
-   margin: auto 5px auto 5px;
+   margin: auto 5px auto 7px;
     
 }
 .link-name{
-   
+   margin-left: 9px;
+   border-radius: 3px;color: aliceblue;
 }
 .Nav-link{
     display: flex;
 }
 .nav-link-names{
+    font-size: 16px;
+    color: aliceblue;
     text-decoration: none;
     font-weight: 500;
+    margin-left: 0px;
+   
     
     
 }
 .nav-link-names-toggle{
-    display: none;
+    
+    
+    display: block;
     margin-left: 10px;
     font-size: 15px;
     text-align: left;
+   
 }
 
 @media only screen and (max-width: 600px) {

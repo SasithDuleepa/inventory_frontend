@@ -60,9 +60,10 @@ export default function Add_supplier() {
       }
   return (
     <div>
-        <h1>Add_supplier</h1>
+        <h1 className='add_supplier_h1'>Add Supplier</h1>
 
         <div className='add_supplier'>
+            <div className='div_1'>
             <div>
                 <label>supplier_name</label>
                 <input className='supplier_name' type="text" id='supplier_name' value={data.supplier_name} onChange={(e)=>handle(e)} placeholder='supplier_name'/>
@@ -71,6 +72,9 @@ export default function Add_supplier() {
                 <label>contact_name</label>
                 <input className='contact_name' type="text" id='contact_name' value={data.contact_name} onChange={(e)=>handle(e)} placeholder='contact_name'/>
             </div>
+
+            </div>
+            <div className='div_1'>
             <div>
                 <label>contact_phone</label>
                 <input className='contact_phone' type="text" id='contact_phone' value={data.contact_phone} onChange={(e)=>handle(e)} placeholder='contact_phone'/>
@@ -79,6 +83,9 @@ export default function Add_supplier() {
                 <label>contact_email</label>
                 <input className='contact_email' type="text" id='contact_email' value={data.contact_email} onChange={(e)=>handle(e)} placeholder='contact_email'/>
             </div>
+
+            </div>
+            <div className='div_1'>
             <div>
                 <label>address</label>
                 <input className='address' type="text" id='address' value={data.address} onChange={(e)=>handle(e)} placeholder='address'/>
@@ -87,6 +94,9 @@ export default function Add_supplier() {
                 <label>city</label>
                 <input className='city' type="text" id='city' value={data.city} onChange={(e)=>handle(e)} placeholder='city'/>
             </div>
+
+            </div>
+            <div className='div_1'>
             <div>
                 <label>state</label>
                 <input className='state' type="text" id='state' value={data.state} onChange={(e)=>handle(e)} placeholder='state'/>
@@ -95,6 +105,9 @@ export default function Add_supplier() {
                 <label>country</label>
                 <input className='country' type="text" id='country' value={data.country} onChange={(e)=>handle(e)} placeholder='country'/>
             </div>
+
+            </div>
+            <div className='div_1'>
             <div>
                 <label>postal_code</label>
                 <input className='postal_code' type="text" id='postal_code' value={data.postal_code} onChange={(e)=>handle(e)} placeholder='postal_code'/>
@@ -103,10 +116,22 @@ export default function Add_supplier() {
                 <label>website</label>
                 <input className='website' type="text" id='website' value={data.website} onChange={(e)=>handle(e)} placeholder='website'/>
             </div>
+
+            </div>
+            <div className='div_1'>
             <div>
                 <label>remarks</label>
                 <input className='remarks' type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
             </div>
+
+            </div>
+            
+           
+           
+            
+            
+            
+            
             <button onClick={(e)=> submit(e)} className='add_button_'>Add</button>
         </div>
 

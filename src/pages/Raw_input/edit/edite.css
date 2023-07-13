@@ -1,6 +1,8 @@
 
 .Edit_title{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .Edit_main{
     background-color:var(--edite_table-background);

@@ -1,3 +1,11 @@
 .add_supplier{
     background-color: var(--form-backgroung-color);
 }
+.add_supplier_h1{
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.div_1{
+    display: flex;justify-content: space-evenly;
+}

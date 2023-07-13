@@ -117,9 +117,10 @@ useEffect(()=>{
         
         <div>
           <div className='space'></div>
-        <div className='main_add'>
-        <div><h1 className='add_title'>add raw inputs</h1></div>
+          <div><h1 className='add_title'>Add Raw Input</h1></div>
 
+        <div className='main_add'>
+       
           <div className='couple'>
                 <div className='add_raw'>
                 <label>raw material name</label>

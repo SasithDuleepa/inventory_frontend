@@ -106,7 +106,9 @@ function clear_data(){
     production_order_number: '',
     quantity_sold: '',
     unit_price: '',
+
   });
+  setAvailable_product_qty('');
 }
 useEffect(() => {
   clear_data()
@@ -155,8 +157,9 @@ const subtotal = bill.reduce((total, item) => {
 
   return (
     <div className='add_sale'>
-        <div className='add_sale_main'>    
       <h1 className='add_sale_h1'>Sale</h1>
+        <div className='add_sale_main'>    
+      
               <div className='add_sale_2'>
                 
                 <div>
@@ -184,7 +187,7 @@ const subtotal = bill.reduce((total, item) => {
               <div className='add_sale_1_1'>
                 <div >
                 <label>product_name</label>
-                <select className='product_name' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
+                <select className='' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
                   <option value="">Select Product</option>
                   {available_products.map((item, index) => (
                     <option key={index} value={item.product_name}>{item.product_name}</option>

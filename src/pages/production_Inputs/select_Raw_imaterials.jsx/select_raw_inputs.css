@@ -1,5 +1,5 @@
 .select_raw_inputs{
-    background-color: rgb(155, 185, 211);
+    background-color: var(--background-color);
 }
 label{
     font-family: var(--form-text-font-family);
@@ -17,12 +17,16 @@ input, select{
 }
 .select_raw_inputs_h1{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .select_raw_inputs_div{
     background-color: var(--form-backgroung-color);
-    margin: 10px 20px 10px 20px;
-    padding: 20px;
+    margin: 10px 40px 10px 40px;
     border-radius: 10px;
+    padding: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
 }
 .select_raw_inputs_div_1{

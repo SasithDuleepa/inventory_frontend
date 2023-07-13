@@ -4,11 +4,13 @@
     background-color: rgb(155, 185, 211);
 }
 .add_sale_h1{
-    text-align: center;
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .add_sale{
-
+   padding: 20px;
 }
 .add_sale_1{
     background-color: var(--form-backgroung-color);
@@ -91,19 +93,7 @@
     background-color: rgb(215, 215, 215);
     overflow: hidden;
 } */
-th{
-    
-    border: 1px solid black;
-}
 
-tr{
-    border: 1px solid black;
-    
-}
-td{
-    border: 1px solid black;
-    
-}
 .bill_delete_btn{
     margin-left: 5px;
 }

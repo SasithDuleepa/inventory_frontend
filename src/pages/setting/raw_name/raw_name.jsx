@@ -37,10 +37,10 @@ export default function Raw_name() {
   return (
     <div>
         <div>
-            <h1 className='raw_name_h1'> addRaw materials Names</h1>
+            <h1 className='raw_name_h1'> Add Raw Material Name</h1>
             <div className='raw_name_add'>
             <div>
-                <label>enter raw material name</label>
+                <label className='raw_name_label'>enter raw material name</label>
                 <input className='raw_name_input' type="text" onChange={(e)=>handlechange(e)} value={data} placeholder='enter raw material name'/>
                 <button className='raw_name_button' onClick={saveData}>add</button>
             </div>

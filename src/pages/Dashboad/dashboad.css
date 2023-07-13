@@ -1,15 +1,20 @@
 .Dashboad{
-    position: fixed;
+    
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
    
 }
 
 .dashboad-title{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .dashboad-summery{
-    border-bottom: 20px solid rgb(229, 137, 17);
-    background-color: rgb(106, 106, 106);
-    width: 90%;
+    border-bottom: 20px solid var(--accent-color);
+    background-color: var(--secondary-color);
+    width: 80%;
     height: 100px;
     margin: 0 auto;
     border-radius: 25px 25px 0 0 ;
@@ -24,8 +29,6 @@
     margin: 1 auto;
     display: flex;
     justify-content: space-evenly;
-    
-    
 }
 .team-img{
     width: 70px;
@@ -74,27 +77,20 @@
 }
 .dashboad_p{
     font-weight: 500;
+    font-size: 20px;
+    color: aliceblue;
 }
 .dashboad_p_{
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 600;
-    margin: -5px 10px 10px 40px;
+    color: aliceblue;
+    margin: -15px 10px 10px 55px;
 }
 
-.section-2{
-    display: flex;
-    justify-content: space-evenly;
-}
-.section-3{
-    display: flex;
-    justify-content: space-evenly;
-}
-.section-4{
-    display: flex;
-    justify-content: space-evenly;
-}
+
 
 .dashboad-raw_stock_view{
     display: flex;
     justify-content: space-evenly;
+    margin: 50px 0px 0px 0px;
 }

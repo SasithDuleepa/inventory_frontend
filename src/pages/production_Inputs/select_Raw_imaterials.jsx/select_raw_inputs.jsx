@@ -363,9 +363,10 @@ useEffect(()=>{
       
        <div className='select_raw_inputs'>
        <div className='space'></div>
+       <h1 className='select_raw_inputs_h1'>Select Raw Inputs to Process</h1>
       
       <div className='select_raw_inputs_div'>
-      <h1 className='select_raw_inputs_h1'>Select_raw_inputs to process</h1>
+      
 
         <div className='select_raw_inputs_div_1'>
           <div>

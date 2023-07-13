@@ -10,8 +10,10 @@
 
 
 /* material wise */
-.raw_data_acc_name_report{
+.raw_data_acc_name_report,.raw_data_acc_name_h2{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 .raw_data_acc_name_div{
     padding: 20px;
@@ -27,12 +29,11 @@
     border: 2px solid black;
 }
 
-.raw_data_acc_name_table{
-    width: 1500px;
-   ;
-    overflow: scroll;
-    margin: 10px auto 10px 20px;
-}
+ .raw_data_acc_name_table{
+    width: 1200px;
+   
+    margin: 10px auto ;
+} 
 .raw_data_acc_name_pdf{
    
 }

@@ -102,7 +102,7 @@ export default function Raw_stock_report() {
   };
   return (
     <div>
-      <h1 className='raw_data_acc_name'>Raw stock level report</h1>
+      <h1 className='raw_data_acc_name'>Raw Stock Level Report</h1>
 
       <div className='raw_data_table'>
       <table>
@@ -112,7 +112,7 @@ export default function Raw_stock_report() {
     <th>batch_number</th>
     <th>purchase_order_number</th>
     <th>quantity</th>
-    <th>availability_status</th>
+    {/* <th>availability_status</th> */}
     <th>unit_of_measure</th>
     <th>date_of_receipt</th>
     <th>expiry_date</th>
@@ -129,7 +129,7 @@ export default function Raw_stock_report() {
       <td>{data.batch_number}</td>
       <td>{data.purchase_order_number}</td>
       <td>{data.quantity}</td>
-      <td>{data.availability_status}</td>
+      {/* <td>{data.availability_status}</td> */}
       <td>{data.unit_of_measure}</td>
       <td>{data.date_of_receipt}</td>
       <td>{data.expiry_date}</td>

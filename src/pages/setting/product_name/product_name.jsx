@@ -35,10 +35,10 @@ export default function Product_name() {
   return (
     <div>
         <div>
-            <h1 className='product_name'> add product names</h1>
+            <h1 className='product_name'> Add Product Name</h1>
             <div className='product_name_container'>
             <div>
-                <label>enter product name</label>
+                <label className='product_name_label'>enter product name</label>
                 <input className='product_name_input' type="text" value={data} onChange={(e)=>changeHandler(e)} placeholder='enter product name'/>
                 <button className='product_name_button' onClick={addProduct_name}>add</button>   
             </div>
@@ -48,8 +48,8 @@ export default function Product_name() {
 
         </div>
         <div>
-            <h1 className='product_name'>product names</h1>
-            <div className='product_name_container'>
+            <h1 className='product_name_'>Product Names</h1>
+            <div className='product_name_container_view'>
                 {product_names.map((product_name)=>{
                     return (
                         <Product_view name={product_name.product_name}/>

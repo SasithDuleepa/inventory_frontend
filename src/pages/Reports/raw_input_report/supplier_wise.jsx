@@ -116,7 +116,7 @@ const Create_pdf = () => {
 };
   return (
     <div>
-        <h2 className='raw_data_acc_name_h2' >supplier wise input raw report</h2>
+        <h2 className='raw_data_acc_name_h2' >Supplier Wise Input Raw Report</h2>
         <div className='raw_data_acc_name_div'>
         <label className='raw_data_acc_name_label'>supplier name</label>
           <select value={supplier_name} onChange={(e)=>supplierName_handler(e)}>

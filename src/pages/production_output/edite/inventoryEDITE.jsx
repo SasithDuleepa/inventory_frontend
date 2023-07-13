@@ -116,7 +116,7 @@ const deleteitem = async (e)=>{
     <div >
       
       <div className='add_'>
-      <h2 className='product_edite'>Product EDITE</h2>
+      <h2 className='product_edite'>Edite / Delete</h2>
       
        <div className='main_set'>
        <div>

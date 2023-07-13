@@ -47,7 +47,7 @@ export default function Sidebar() {
         }else if(currentPath === "/setting"){
             setSetting('link_li_clicked')
         }else if(currentPath === "/reports"){
-            setCustomer('link_li_clicked')
+            setReports('link_li_clicked')
         
         }
     },[])
@@ -67,21 +67,17 @@ export default function Sidebar() {
         }
     }
   return (
-    <div className='Sidebar'>
-        {/* <div className={navname}> */}
-        <div className="nav-bar">
-        {/* <a onClick={changeIcon}  className='Nav-icon-on'>{icon}</a> */}
-        
-            <div className='head'>
-
-            </div>
+    <div className='Sidebar'>        
+        <div className="nav-bar">        
+            {/* <div className='head'>
+            </div> */}
 
             <div className='nav-menu'>
                 
                 <ul>
                     <li className={dashboad}><div className='Nav-link'><div className='link-icon'><BiChalkboard/></div><div className='link-name'><a href='/' className={navlinknames}>Dashboard</a></div></div></li>
-                    <li className={input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/Raw_input' className={navlinknames}>raw input</a></div></div></li>
-                    <li className={production_input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/Production_inputs" className={navlinknames}>production Inputs</a></div></div></li>
+                    <li className={input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/Raw_input' className={navlinknames}>Raw_input</a></div></div></li>
+                    <li className={production_input}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href="/Production_inputs" className={navlinknames}>production <br/> Inputs</a></div></div></li>
                     
                     <li className={product}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/add_product' className={navlinknames}>Product</a></div></div></li>
                     <li className={sales}><div className='Nav-link'><div className='link-icon'> < BiMenu/> </div> <div className='link-name'><a href='/sales' className={navlinknames}>Sale</a></div></div></li>

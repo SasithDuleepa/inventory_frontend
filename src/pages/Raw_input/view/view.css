@@ -1,20 +1,28 @@
 .raw_view{
-    background-color: var(--table-background);
+    background-color: var(--background-color);
 }
 
-.table-responsive{
-    overflow: scroll;
-}
+/* .table_responsive{
+    position: relative;
+    width: 20px;
+} */
 .text-center{
     text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 /* .container{
     background-color: aqua;
     margin: 10px 20px 10px 20px;
     border-radius: 10px;
 } */
-/* .table-responsive{
-    background-color: aquamarine;
+.table_responsive{
+    width: 1200px;
+    background-color: var(--accent-color);
     margin: 10px auto;
     padding: 20px;
-} */
+    overflow: scroll;
+    overflow-x: auto; 
+  overflow-y: visible; 
+  border-collapse: collapse;
+}

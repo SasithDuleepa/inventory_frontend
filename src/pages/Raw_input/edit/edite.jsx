@@ -93,10 +93,10 @@ const Delete =async()=>{
 }
   return (
     <div className='Edit_main_container'>
-        
+        <h1 className='Edit_title'>Edite / Delete</h1>
 
         <div className='Edit_main'> 
-        <h1 className='Edit_title'>Edite / Delete</h1>
+        
         <div className='search_bar'><input className='search_input' type='search' onChange={(e)=>searchHandler(e)}  placeholder='Search'/></div>
  
 
