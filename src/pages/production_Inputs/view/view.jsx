@@ -29,17 +29,17 @@ export default function View() {
         <table>
           <thead>
             <tr>
-              <th>production_order_number</th>
-              <th>raw_material_name</th>
-              <th>quantity_used</th>
-              <th>unit_of_measure</th>
-              <th>batch_number</th>
-              <th>date_time_of_usage</th>
-              <th>production_line</th>
-              <th>responsible_person</th>
-              <th>scrap_waste_quantity</th>
-              <th>remarks</th>
-              <th>quantity_available</th>
+              <th>Production Order Number</th>
+              <th>Raw Material Name</th>
+              <th>Quantity Used</th>
+              <th>Unit of Measure</th>
+              <th>Batch Number</th>
+              <th>Date Time of Usage</th>
+              <th>Production Line</th>
+              <th>Responsible Person</th>
+              <th>Scrap Waste Quantity</th>
+              <th>Remarks</th>
+              <th>Quantity Available</th>
             </tr>
           </thead>
           <tbody>

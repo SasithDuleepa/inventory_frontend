@@ -163,30 +163,27 @@ const subtotal = bill.reduce((total, item) => {
               <div className='add_sale_2'>
                 
                 <div>
-                <label>sale_date</label>
+                <label>Sale Date :</label>
                 <input className='sale_date' type="date" id='sale_date' value={data_const.sale_date} onChange={(e)=>handle_const(e)} placeholder='sale_date'/>
                 </div>
                 <div>
-                <label>customer_name</label>
+                <label>Customer Name :</label>
                 <input className='customer_name' type="text" id='customer_name' value={data_const.customer_name} onChange={(e)=>handle_const(e)} placeholder='customer_name'/>
                 </div>
                 <div>
-                <label>payment_method</label>
+                <label>Payment Method :</label>
                 <input className='payment_method' type="text" id='payment_method' value={data_const.payment_method} onChange={(e)=>handle_const(e)} placeholder='payment_method'/>
                 </div>
-                {/* <div>
-                <label>remarks</label>
-                <input className='remark' type="text" id='remarks' value={data_const.remarks} onChange={(e)=>handle_const(e)} placeholder='remarks'/>
-                </div> */}
+                
                 <div>
-                <label>bill_id</label>
+                <label>Bill Id :</label>
                 <input className='bill_id' type="text" id='bill_id' value={data_const.bill_id} onChange={(e)=>handle_const(e)} placeholder='bill_id'/>
                 </div>
                 </div>
              <div className='add_sale_1'>
               <div className='add_sale_1_1'>
-                <div >
-                <label>product_name</label>
+                <div className='sale_item'>
+                <label>Product Name</label><p className='sale_colan'>:</p>
                 <select className='' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
                   <option value="">Select Product</option>
                   {available_products.map((item, index) => (
@@ -194,10 +191,27 @@ const subtotal = bill.reduce((total, item) => {
                     ))}
                     
                 </select>
-                {/* <input className='product_name' type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/> */}
+               
                 </div>
-                <div >
-                <label>production_order_number</label>
+
+                <div  className='sale_item_'>                 
+                  <div className='quantity_sold_div'>
+                     <label className='quantity_sold_label'>Quantity Sold</label><p className='sale_colan'>:</p>
+                     <input className='quantity_sold' type="text" id='quantity_sold' value={data.quantity_sold} onChange={(e)=>handle(e)} placeholder='quantity_sold'/>
+                  </div>
+                  <p className='available_product_qty'>Available Qty : {available_product_qty}</p>
+                
+                </div>
+
+
+
+                
+
+              </div>
+              <div className='add_sale_1_2'>
+
+                <div  className='sale_item'>
+                <label>Production Order Number</label><p className='sale_colan'>:</p>
                 <select className='production_order_number' id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)}>
                   <option value="">Select PO_no</option>
                   {PO_no.map((item, index) => (
@@ -206,18 +220,12 @@ const subtotal = bill.reduce((total, item) => {
                 </select>
                 {/* <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/> */}
                 </div>
-
-              </div>
-              <div className='add_sale_1_2'>
-                 <div >
-                  <p>available qty : {available_product_qty}</p>
-                <label>quantity_sold</label>
-                <input className='quantity_sold' type="text" id='quantity_sold' value={data.quantity_sold} onChange={(e)=>handle(e)} placeholder='quantity_sold'/>
-                </div>
-                <div >
-                <label>unit_price</label>
+                 
+                <div  className='sale_item'>
+                <label>Unit Price</label><p className='sale_colan'>:</p>
                 <input className='unit_price' type="text" id='unit_price' value={data.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
                 </div>
+                <div></div>
               </div>
               <div>
                 
@@ -226,8 +234,9 @@ const subtotal = bill.reduce((total, item) => {
                  
                 
 
-                 <button className='add_sale_btn_1' onClick={(e)=>addToBill(e)}>Enter</button>
+                 
              </div>
+             <button className='add_sale_btn_1' onClick={(e)=>addToBill(e)}>Enter</button>
  
                
 
@@ -238,11 +247,11 @@ const subtotal = bill.reduce((total, item) => {
                 <div>
                   <table className='bill_table'>
                     <thead>
-                      <th>product_name</th>
-                      <th>quantity_sold</th>
-                      <th>unit_price</th>
-                      <th>total_price</th>
-                      <th>action</th>
+                      <th>Product Name</th>
+                      <th>Quantity Sold</th>
+                      <th>Unit Price</th>
+                      <th>Total Price</th>
+                      <th>Action</th>
 
                     </thead>
                     <tbody>

@@ -1,104 +1,123 @@
 .App {
   text-align: center;
-  }
+}
 
-.main{
+.main {
   margin-left: 60px;
-  
+
 }
 
 
-:root{
+:root {
 
-  --primary-color:rgb(0, 28, 48); /* Replace with your chosen primary color */
-  --secondary-color:rgb(23, 107, 135); /* Replace with your chosen secondary color */
-  --accent-color:rgb(100, 204, 197); /* Replace with your chosen accent color */
-  --background-color: rgb(218, 255, 251); /* Replace with your chosen background color */
+  --primary-color: rgb(0, 28, 48);
+  /* Replace with your chosen primary color */
+  --secondary-color: rgb(23, 107, 135);
+  /* Replace with your chosen secondary color */
+  --accent-color: rgb(100, 204, 197);
+  /* Replace with your chosen accent color */
+  --background-color: rgb(218, 255, 251);
+  /* Replace with your chosen background color */
 
 
 
 
-  --form-backgroung-color:rgba(100, 204, 197, 0.223);
+  --form-backgroung-color: rgba(100, 204, 197, 0.223);
   --form-text-color: #000000;
   --form-text-font-size: 16px;
   --form-text-font-family: Arial, sans-serif;
 
-  --table-background:rgb(100, 204, 197);
+  --table-background: rgb(100, 204, 197);
 
-  --edite_table-background:rgba(65, 65, 65, 0.458);
-  --edite-data:rgba(23, 23, 23, 0.177);
+  --edite_table-background: rgba(172, 168, 168, 0.458);
+  --edite-data: rgba(23, 23, 23, 0.177);
+
+  --header-text-font:'Montserrat', sans-serif;
+
+  
+  
 }
 
-table{
-  
+table {
+
   margin: 10px auto;
   overflow: scroll;
-  overflow-x: auto; 
-  overflow-y: visible; 
+  overflow-x: auto;
+  overflow-y: visible;
   border-collapse: collapse;
-  
+
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
-th{
-    
+
+th {
+
   border: 1px solid black;
 }
 
-tr{
+tr {
   border: 1px solid black;
-  
+
 }
-td{
+
+td {
   border: 1px solid black;
   text-align: center;
-  
+
 }
-tr:nth-child(even){background-color: #f2f2f2}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
 th {
   background-color: #6b6f6b;
   color: white;
 }
-tbody{
+
+tbody {
   background-color: rgb(240, 240, 240);
   border: 1px solid black;
-  
+
 }
 
 
 /* sub nav */
-.nav_2{
+.nav_2 {
   margin-left: -60px;
-   background-color:rgb(0, 28, 48);
-   display: flex;
-   justify-content: space-evenly;
-   height: 50px;
-   border-top: 2px solid rgba(245, 245, 220, 0.096);
+  background-color: rgb(0, 28, 48);
+  display: flex;
+  justify-content: space-evenly;
+  height: 50px;
+  border-top: 2px solid rgba(245, 245, 220, 0.096);
 }
-.setting_nav_item_{
+
+.setting_nav_item_ {
   margin: 5px;
-  
+
   padding: 2px;
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.099);
 
   backdrop-filter: blur(50px);
-  
+
 
 }
-.setting_nav_item_active_{
+
+.setting_nav_item_active_ {
   margin: 5px;
   padding: 2px;
 }
-.nav-link_{
+
+.nav-link_ {
   color: rgb(232, 232, 232);
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
- 
-  
-}
 
+
+}

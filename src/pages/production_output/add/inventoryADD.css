@@ -6,10 +6,13 @@
     margin: 10px 100px 10px 100px;
     padding: 20px;
     border-radius: 10px;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    
 }
 .add_title{
     text-align: center;
+    font-family: var(--header-text-font);
 }
 
 label{
@@ -20,11 +23,31 @@ label{
     color: blueviolet;
     text-align:left;
 }
+.product_output_label{
+    text-align: left;
+}
+._colan{
+    font-weight: 700;
+    margin-right: 20px;
+}
+._colan_{
+    font-weight: 700;
+    margin-right: 20px;
 
-.set_1,.set_2,.set_3, .set_4{
+}
+.unit_of_measure,.product_out,.production_order_number{
+    margin-left: 10px;
+    width:255px ;
+}
+.set_1,.set_2{
     display: flex;
-    justify-content: space-evenly;
     
+    flex-direction: column;
+    
+}
+.add_product{
+    width: 600px;
+    display: flex;
 }
 
 .product_name_{
@@ -51,7 +74,9 @@ label{
   touch-action: manipulation;
   position: relative;
   margin: 20px;
-  left: 50%;
+  width: 80px;
+  height: 40px;
+  left: 80%;
 }
 .add_button__:hover {
       box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;

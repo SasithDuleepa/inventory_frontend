@@ -11,7 +11,7 @@
     overflow: hidden;
     margin-top: -190px;
     width: 50px;
-    height: 100vh;
+    height: 110vh;
     /* border-radius: 0px 15px 15px 0;     */
     background-color:rgba(0, 28, 48);
     overflow: hidden;
@@ -63,7 +63,7 @@ ul{
 }
 .link_li{
     padding: 7px;
-    margin: 0px;
+    margin: 10px 0 0 0;
    
     /* border: 2px solid var(--secondary-color); */
     border-radius: 3px;

@@ -35,18 +35,18 @@ export default function Input_stock_view() {
               <thead>
                 <tr>
                  
-                <th>Raw input name</th>
-                <th>supplier_name</th>
-                <th>purchase_order_number</th>
-                <th>quantity</th>
-                <th>unit_of_measure</th>
-                <th>unit_price</th>
-                <th>batch_number</th>
-                <th>date_of_receipt</th>
-                <th>expiry_date</th>
-                <th>location</th>
-                <th>responsible_person</th>
-                <th>remarks</th>
+                <th>Raw Input Name</th>
+                <th>Supplier Name</th>
+                <th>Purchase Order Number</th>
+                <th>Quantity</th>
+                <th>Unit of Measure</th>
+                <th>Unit Price</th>
+                <th>Batch Number</th>
+                <th>Date of Receipt</th>
+                <th>Expiry Date</th>
+                <th>Location</th>
+                <th>Responsible Person</th>
+                <th>Remarks</th>
                 </tr>
               </thead>
               <tbody>

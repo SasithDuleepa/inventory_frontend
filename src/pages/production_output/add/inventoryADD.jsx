@@ -98,13 +98,13 @@ useEffect(()=>{
         <div className='add'>
 
         
-            <form onSubmit={(e)=> submit(e)}>
-              <div >
+            
+             
                 <div className='set_1'>
-                <div>
-                <label>production_order_number</label>
+                <div className='add_product'>
+                <label className='product_output_label'>Production Order Number</label><p className='_colan'>:</p>
                 <select className='production_order_number' id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)}>
-                  <option value="">select production_order_number</option>
+                  <option value="">select production order number</option>
                   {order_no.map((order_no, index)=>{
                     return(
                       <option key={index} value={order_no.production_order_number}>{order_no.production_order_number}</option>
@@ -114,9 +114,9 @@ useEffect(()=>{
                 </select>
                
                 </div>
-                <div>
-                <label>product_name</label>
-                <select className='' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
+                <div className='add_product'>
+                <label  className='product_output_label'>Product Name</label><p className='_colan_'>:</p>
+                <select className='product_out' id='product_name' value={data.product_name} onChange={(e)=>handle(e)}>
                   <option value="">select product_name</option>
                   {product_name.map((product_name, index)=>{
                     return(
@@ -127,14 +127,22 @@ useEffect(()=>{
                   </select>
                 
                 </div>
+                <div className='add_product'>
+                <label  className='product_output_label'>Date Time of Production</label><p className='_colan'>:</p>
+                <input className='date_time_of_production' type="date" id='date_time_of_production' value={data.date_time_of_production} onChange={(e)=>handle(e)} placeholder='date_time_of_production'/>
+                </div>
+                <div className='add_product'>
+                <label  className='product_output_label'>Responsible Person</label><p className='_colan'>:</p>
+                <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
+                </div>
                 </div>
                 <div className='set_2'>
-                <div>
-                <label>quantity_produced</label>
+                <div className='add_product'>
+                <label  className='product_output_label'>Quantity Produced</label><p className='_colan'>:</p>
                 <input className='quantity_produced' type="number" id='quantity_produced' value={data.quantity_produced} onChange={(e)=>handle(e)} placeholder='quantity_produced'/>
                 </div>
-                <div>
-                <label>unit_of_measure</label>
+                <div className='add_product'>
+                <label  className='product_output_label'>Unit of Measure</label><p className='_colan_'>:</p>
                 <select  className='unit_of_measure'  id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)}>
                   <option>select unit of measure</option>
                   {measur_unit.map((unit,index)=>{
@@ -145,47 +153,20 @@ useEffect(()=>{
                 </select>
                 {/* <input className='unit_of_measure' type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/> */}
                 </div>
-                </div>
-                <div className='set_3'>
-                <div>
-                <label>date_time_of_production</label>
-                <input className='date_time_of_production' type="date" id='date_time_of_production' value={data.date_time_of_production} onChange={(e)=>handle(e)} placeholder='date_time_of_production'/>
-                </div>
-                <div>
-                <label>production_line</label>
+                <div className='add_product'>
+                <label  className='product_output_label'>Production Line</label><p className='_colan'>:</p>
                 <input className='production_line' type="text" id='production_line' value={data.production_line} onChange={(e)=>handle(e)} placeholder='production_line'/>
                 </div>
-                </div>
-                <div className='set_4'>
-                <div>
-                <label>responsible_person</label>
-                <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
-                </div>
-                <div>
-                <label>remarks</label>
+                <div className='add_product'>
+                <label  className='product_output_label'>Remarks</label><p className='_colan'>:</p>
                 <input  type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
                 </div>
-                
-                  
-                
-                
-                
-                
-               
-                
-                <button className='add_button__'>Add</button>
 
-              
-                
-                </div>
-
-               
-
-
-            </form>
+          
 
         </div>
+        <button className='add_button__' onClick={(e)=>submit(e)}>Add</button>
         <div className='space'></div>
     </div>
   )

@@ -2,23 +2,39 @@
     background-color:var(--background-color);
 }
 .add_title{
+    font-family: var(--header-text-font);
     text-align: center;
+    font-weight: bold;
     font-size: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }
 .main_add{   
     background-color: var(--form-backgroung-color);
     margin: 10px 40px 10px 40px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px ;
+    
 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    
-   
-}
-.couple{
     display: flex;
     justify-content: space-evenly;
+   
+}
+.couple_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+.couple_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+._label{
+    text-align: left;
+    font-family: var(--form-text-font-family);
 }
 
 label{
@@ -27,24 +43,40 @@ label{
     color: black;
     font-weight: 600;
     width: 200px;
-    text-align: right;
+    text-align: left;
     position: relative;
 }
 input, select{
+    margin-left: 5px;
     width: 250px;
     text-align: center;
     
 }
 select{
+    width: 250px;
     height: 30px;
     margin-top: 10px;
+    margin-right: 10px;
+}
+.date_of_receipt,.expiry_date{
+    width: 251px;
+    margin-left: 14px;
 }
 .add_raw{
+    width: 500px;
     display: flex;
     justify-content: space-between;
+    
+    text-align: left;
+   
 }
-.raw_material_name_select{
+.Unit_of_measure{
+    width: 240px;
+}
+.raw_material_name_select,.supplier_name{
     height: 30px;
+    width: 255px;
+    
     margin-top: 10px;
 }
 .add_remarks{
@@ -55,11 +87,21 @@ select{
 
 
 .select_unit,.select_supplier{
-    height: 20px;
+    height: 60px;
+    width: 500px;
     display: flex;
     justify-content: space-between;
+   
 }
 
+.p_{
+    margin: auto 20px auto 10px;
+    font-weight: 700;
+}
+._p_{
+    margin: auto 23px auto 10px;
+    font-weight: 700;
+}
 
 
 .add_button_ {
@@ -82,7 +124,9 @@ select{
   touch-action: manipulation;
   margin: 20px 10px 10px 10px;
   position: relative;
-  left: 50%;
+  width: 80px;
+  height: 40px;
+  left: 80%;
 }
 
 .add_button_:hover {

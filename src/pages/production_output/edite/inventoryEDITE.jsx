@@ -114,9 +114,10 @@ const deleteitem = async (e)=>{
 
   return (
     <div >
-      
+      <div className='space'></div>
+      <h2 className='product_edite'>Edit / Delete</h2>
       <div className='add_'>
-      <h2 className='product_edite'>Edite / Delete</h2>
+      
       
        <div className='main_set'>
        <div>
@@ -126,20 +127,22 @@ const deleteitem = async (e)=>{
        </div>
                 
                 <div className='search_result'>
-                  <table className='search_table'>
+
+                  <div className='tabel_div'>
+                    <table className='search_table'>
                     <thead>
                       <tr>
-                      <th>production_order_number</th>
-          <th>product_name</th>
-          <th>quantity_produced</th>
+                      <th>Production Order Number</th>
+          <th>Product Name</th>
+          <th>Quantity Produced</th>
 
-          <th> unit_of_measure</th>
-          <th>date_time_of_production</th>
-          <th>production_line</th>
+          <th> Unit of Measure</th>
+          <th>Date Time of Production</th>
+          <th>Production Line</th>
 
-          <th>responsible_person</th>
-          <th>remarks</th>
-          <th>select</th>
+          <th>Responsible Person</th>
+          <th>Remarks</th>
+          <th>Select</th>
 
                       </tr>
                     </thead>
@@ -164,66 +167,72 @@ const deleteitem = async (e)=>{
                       ))}
                     </tbody>
                   </table>
+
                   </div>
-
-
-
-
-                  <div className='main_set_'>
-                  <form >
+                  
+                  </div>
                   <div className='main_set_'>
                     <div >
-                <div>
-                <label>production_order_number</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Production Order Number</label><p className='product_input_colon'>:</p>
                 <input className='production_order_number' type="text" id='production_order_number' value={data.production_order_number} onChange={(e)=>handle(e)} placeholder='production_order_number'/>
                 </div>
                 
-                <div>
-                <label>product_name</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Product Name</label><p className='product_input_colon'>:</p>
                 <input type="text" id='product_name' value={data.product_name} onChange={(e)=>handle(e)} placeholder='product_name'/>
                 </div>
                    
-                <div>
-                <label>quantity_produced</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Quantity Produced</label><p className='product_input_colon'>:</p>
                 <input type="text" id='quantity_produced' value={data.quantity_produced} onChange={(e)=>handle(e)} placeholder='quantity_produced'/>
                 </div>
                 
-                <div>
-                <label>unit_of_measure</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Unit of Measure</label><p className='product_input_colon'>:</p>
                 <input type="text" id='unit_of_measure' value={data.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
                 </div>
                 
-                <div>
-                <label>date_time_of_production</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Date Time of Production</label><p className='product_input_colon'>:</p>
                 <input type="text" id='date_time_of_production' value={data.date_time_of_production} onChange={(e)=>handle(e)} placeholder='date_time_of_production'/>
                 </div>
 
-                <div>
-                <label>production_line</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Production Line</label><p className='product_input_colon'>:</p>
                 <input type="text" id='production_line' value={data.production_line} onChange={(e)=>handle(e)} placeholder='production_line'/>
                 </div>
 
-                <div>
-                <label>responsible_person</label>
+                <div className='product_input_div'>
+                <label className='product_input_label'>Responsible Person</label><p className='product_input_colon'>:</p>
                 <input type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
                 </div>
 
-                <div>
-                <label>batch_no</label>
+                <div className='product_input_div'>
+                <label  className='product_input_label'>Batch No</label><p className='product_input_colon'>:</p>
                 <input type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
-                </div>
-                </div>
-                
+
                 <div className='btn_set'>
-            <button className='update_btn' onClick={update}>update</button>
-                <button className='delete_btn' onClick={deleteitem}>delete</button>
+            <button className='update_btn' onClick={update}>Update</button>
+                <button className='delete_btn' onClick={deleteitem}>Delete</button>
                 </div>
 
-            </form>
-                  </div>
-                 
+
                 </div>
+
+                
+
+
+
+                </div>
+                
+                
+
+           
+               </div>
+                 
+               
                 
            
        

@@ -2,7 +2,11 @@
     background-color:var(--table-background);
 }
 .inventory-view-title{
-     text-align: center;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--header-text-font);
      
 }
 /* .inventory-view-container{

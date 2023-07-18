@@ -9,7 +9,7 @@ const RawStock = () => {
 
   const fetchData = async () => {
     try {
-      const res = await Axios.get('http://localhost:8080/raw_input/raw_avalable');
+      const res = await Axios.get('http://localhost:8080/dashboad/raw_avalable');
       setInventoryData(res.data);
     } catch (error) {
       console.log(error);

@@ -3,12 +3,28 @@
     text-align: center;
     font-size: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--header-text-font);
 }
 .Edit_main{
     background-color:var(--edite_table-background);
     margin: 10px 20px 10px 20px ;
     border-radius: 10px;
 }
+.raw_input_edit_label{
+    text-align: left;
+}
+.raw_input_edit_colan{
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.raw_input_edit_input{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .search_bar{
     display: flex;
     justify-content: center;
@@ -35,7 +51,10 @@
     padding: 10px;
     overflow: hidden;
 }
-
+.raw_edite_button{
+    position: relative;
+  left: 100%;
+}
 .edite_button{
     
     display: inline-block;

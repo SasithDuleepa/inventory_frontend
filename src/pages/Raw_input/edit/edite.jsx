@@ -105,18 +105,18 @@ const Delete =async()=>{
             <thead>
               <tr>
                 <th>Raw input name</th>
-                <th>supplier_name</th>
-                <th>purchase_order_number</th>
-                <th>quantity</th>
-                <th>unit_of_measure</th>
-                <th>unit_price</th>
-                <th>batch_number</th>
-                <th>date_of_receipt</th>
-                <th>expiry_date</th>
-                <th>location</th>
-                <th>responsible_person</th>
-                <th>remarks</th>
-                <th>select</th>
+                <th>Supplier Name</th>
+                <th>Purchase Order Number</th>
+                <th>Quantity</th>
+                <th>Unit of Measure</th>
+                <th>Unit Price</th>
+                <th>Batch Number</th>
+                <th>Date ofReceipt</th>
+                <th>Expiry Date</th>
+                <th>Location</th>
+                <th>Responsible Person</th>
+                <th>Remarks</th>
+                <th>Select</th>
               </tr>
             </thead>
             <tbody>
@@ -143,60 +143,65 @@ const Delete =async()=>{
 
         <div className='edite_main'>
           <div>
-          <div>
-                <label>raw_material_name</label>
+               <div className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Raw Material Name</label><p className='raw_input_edit_colan'>:</p>
                 <input className='raw_material_name' type="text" id='raw_material_name' value={select.raw_material_name} onChange={(e)=>handle(e)} placeholder='raw_material_name'/>
                 </div>
-                <div>
-                <label>supplier_name</label>
-                <input className='supplier_name' type="text" id='supplier_name' value={select.supplier_name} onChange={(e)=>handle(e)} placeholder='supplier_name'/>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Supplier Name</label><p className='raw_input_edit_colan'>:</p>
+                <input className='supplier_name_' type="text" id='supplier_name' value={select.supplier_name} onChange={(e)=>handle(e)} placeholder='supplier_name'/>
                 </div>
-                <div>
-                <label>purchase_order_number</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Purchase Order Number</label><p className='raw_input_edit_colan'>:</p>
                 <input className='purchase_order_number' type="text" id='purchase_order_number' value={select.purchase_order_number} onChange={(e)=>handle(e)} placeholder='purchase_order_number'/>
                 </div>
 
         
-                <div>
-                <label>quantity</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Quantity</label><p className='raw_input_edit_colan'>:</p>
                 <input className='quantity' type="text" id='quantity' value={select.quantity} onChange={(e)=>handle(e)} placeholder='quantity'/>
                 </div>
-                <div>
-                <label>unit_of_measure</label>
-                <input className='unit_of_measure' type="text" id='unit_of_measure' value={select.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Unit of Measure</label><p className='raw_input_edit_colan'>:</p>
+                <input className='unit_of_measure_' type="text" id='unit_of_measure' value={select.unit_of_measure} onChange={(e)=>handle(e)} placeholder='unit_of_measure'/>
                 </div>
-                <div>
-                <label>unit_price</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Unit Price</label><p className='raw_input_edit_colan'>:</p>
                 <input className='unit_price' type="text" id='unit_price' value={select.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
                 </div>
-                <div>
-                <label>batch_number</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Batch Number</label><p className='raw_input_edit_colan'>:</p>
                 <input className='batch_number' type="text" id='batch_number' value={select.batch_number} onChange={(e)=>handle(e)} placeholder='batch_number'/>
                 </div>
-                <div>
-                <label>date_of_receipt</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Date of Receipt</label><p className='raw_input_edit_colan'>:</p>
                 <input className='date_of_receipt' type="text" id='date_of_receipt' value={select.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
                 </div>
-                <div>
-                <label>expiry_date</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Expiry Date</label><p className='raw_input_edit_colan'>:</p>
                 <input className='expiry_date' type="text" id='expiry_date' value={select.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
                 </div>
-                <div>
-                <label>location</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Location</label><p className='raw_input_edit_colan'>:</p>
                 <input className='location' type="text" id='location' value={select.location} onChange={(e)=>handle(e)} placeholder='location'/>
                 </div>
-                <div>
-                <label>responsible_person</label>
+                <div  className=' raw_input_edit_input'>
+                <label className='raw_input_edit_label'>Responsible Person</label><p className='raw_input_edit_colan'>:</p>
                 <input className='responsible_person' type="text" id='responsible_person' value={select.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
                 </div>
-                <div>
-                  <label>remarks</label>
+                <div  className=' raw_input_edit_input'>
+                  <label className='raw_input_edit_label' >Remarks</label><p className='raw_input_edit_colan'>:</p>
                   <input className='remarks' type="text" id='remarks' value={select.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
                 </div>
 
-
+                <div className='raw_edite_button'>
                 <button onClick={Edit} className='edite_button'>Update</button>
                 <button onClick={Delete} className='delete_button'>Delete</button>
+
+                </div>
+
+
+                
 
           </div>
                 

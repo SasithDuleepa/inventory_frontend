@@ -121,22 +121,18 @@ useEffect(()=>{
 
         <div className='main_add'>
        
-          <div className='couple'>
+          <div className='couple_1'>
                 <div className='add_raw'>
-                <label>raw material name</label>
+                <label className='_label'>Raw Material Name </label><p className='p_'>:</p>
                 <select className='raw_material_name_select'  id='raw_material_name' value={data.raw_material_name} onChange={(e)=>handle(e)}> 
                 <option>select raw name</option>
                 {raw_names.map((product, index)=>(
                     <option key={index} value={product.raw_material}>{product.raw_material}</option>
                     ))}
-                  
-
-                </select>
-                
-                </div>    
-
+                </select>                
+                </div> 
                 <div className='select_supplier'>
-                <label>supplier_name</label>              
+                <label className='_label'>Supplier Name </label>  <p className='p_'>:</p>            
                 <select className='supplier_name' id='supplier_name'value={data.supplier_name} onChange={(e)=>handle(e)} required='true'>
                 <option>select supplier</option>
                     {supplier_data.map((product, index)=>(
@@ -145,24 +141,20 @@ useEffect(()=>{
                 </select>             
                 </div> 
 
-          </div>
-          <div className='couple'>
                 <div className='add_raw'>
-                <label>purchase_order_number</label>
+                <label className='_label'>Purchase Order Number </label><p className='p_'>:</p>
                 <input className='purchase_order_number' type="text" id='purchase_order_number' value={data.purchase_order_number} onChange={(e)=>handle(e)} placeholder='purchase_order_number'/>
                 </div>
                 
                 <div className='add_raw'>
-                <label>quantity</label>
+                <label className='_label'>Quantity </label><p className='p_'>:</p>
                 <input className='quantity' type="number" id='quantity' value={data.quantity} onChange={(e)=>handle(e)} placeholder='quantity'/>
                 </div>
 
-          </div>
-          <div className='couple'>
                 <div className='select_unit'>
-                <label>unit_of_measure</label>
+                <label className='_label'>Unit of Measure</label><p className='_p_'>:</p>
                 <div>
-                <select className='unit_of_measure' id='unit_of_measure'value={data.unit_of_measure} onChange={(e)=>handle(e)} required='true'>
+                <select className='Unit_of_measure' id='unit_of_measure'value={data.unit_of_measure} onChange={(e)=>handle(e)} required='true'>
                 <option>unit_of_measure</option>
                     {units.map((product, index)=>(
                         <option key={index} value={product.unit_name}>{product.unit_name}</option>
@@ -175,69 +167,61 @@ useEffect(()=>{
                 </div>
 
                 <div className='add_raw'>
-                <label>unit_price</label>
+                <label className='_label'>Unit Price </label><p className='p_'>:</p>
                 <input className='unit_price' type="number" id='unit_price' value={data.unit_price} onChange={(e)=>handle(e)} placeholder='unit_price'/>
                 </div>
 
-
           </div>
-          <div className='couple'>
+
+
+          <div className='couple_2'>
 
           <div className='add_raw'>
-                <label>batch_number</label>
+                <label className='_label'>Batch Number </label><p className='p_'>:</p>
                 <input className='batch_number' type="text" id='batch_number' value={data.batch_number} onChange={(e)=>handle(e)} placeholder='batch_number'/>
                 </div>
 
                 <div className='add_raw'>
-                <label>date_of_receipt</label>
+                <label className='_label'>Date of Receipt </label><p className='p_'>:</p>
                 <input className='date_of_receipt' type="date" id='date_of_receipt' value={data.date_of_receipt} onChange={(e)=>handle(e)} placeholder='date_of_receipt'/>
                 </div>
 
-                
-
-          </div>
-          <div className='couple'>
-          <div className='add_raw'>
-                <label>expiry_date</label>
-                <input className='expiry_date' type="date" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
+                <div className='add_raw'>
+                <label className='_label'>Expiry Date </label><p className='p_'>:</p>
+                <input className='expiry_date'  type="date" id='expiry_date' value={data.expiry_date} onChange={(e)=>handle(e)} placeholder='expiry_date'/>
                 </div>
 
                 <div className='add_raw'>
-                <label >location</label>
+                <label className='_label'>Location </label><p className='p_'>:</p>
                 <input className='location' type="text" id='location' value={data.location} onChange={(e)=>handle(e)} placeholder='location'/>
                 </div>
 
-                
-
-          </div>
-          
-          <div className='couple'>
-          <div className='add_raw'>
-                <label>responsible_person</label>
+                <div className='add_raw'>
+                <label className='_label'>Responsible Person </label><p className='p_'>:</p>
                 <input className='responsible_person' type="text" id='responsible_person' value={data.responsible_person} onChange={(e)=>handle(e)} placeholder='responsible_person'/>
                 </div>
 
-                <div className='add_remarks'>
-                  <div>
-                  <label>remarks</label>
+                <div className='add_raw'>
+                  
+                  <label className='_label'>Remarks </label><p className='p_'>:</p>
                 <input className='remarks' type="text" id='remarks' value={data.remarks} onChange={(e)=>handle(e)} placeholder='remarks'/>
-                </div>
+                
 
                   </div>
-          </div>
-                
-                
 
                 
-
-                
-
-                
-                
-
-                <button onClick={(e)=> submit(e)} className='add_button_'>Add</button>
 
           </div>
+
+          
+
+                
+
+                
+
+          </div>
+
+          <button onClick={(e)=> submit(e)} className='add_button_'>Add</button>
            
             
              

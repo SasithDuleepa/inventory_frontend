@@ -5,6 +5,7 @@
     text-align: center;
     font-size: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--header-text-font);
 }
 .edite_div{
     background-color: var(--edite_table-background);
@@ -21,6 +22,21 @@
     height: 35px;
     border-radius: 10px;
 }
+.production_input_colon{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 700;
+}
+.product_input_label{
+    text-align: left;
+}
+.production_input_div{
+  
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .edite_div_2{
     
     margin: 10px 20px 10px 20px;
@@ -31,4 +47,8 @@
     display: flex;
     justify-content: space-evenly;
     background-color: var(--edite-data);
+}
+.production_input_div_button{
+    position: relative;
+    left: 90%;
 }

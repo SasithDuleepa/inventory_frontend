@@ -68,7 +68,7 @@ const handleClick3 = () => {
         <div className='setting_nav'>
           <div className={classname_1}><a className='nav-link' href="#" onClick={handleClick1}> Add Raw  </a></div>
           <div className={classname_2}><a className='nav-link' href="#" onClick={handleClick2}> View  </a></div>
-          <div className={classname_3}><a className='nav-link' href="#" onClick={handleClick3}> Edite  </a></div>
+          <div className={classname_3}><a className='nav-link' href="#" onClick={handleClick3}> Edit  </a></div>
          
           
           

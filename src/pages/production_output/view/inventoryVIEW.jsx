@@ -60,16 +60,16 @@ const Create_pdf = () => {
       <table >
         <thead>
           <tr>
-          <th>production_order_number</th>
-          <th>product_name</th>
-          <th>quantity_produced</th>
+          <th>Production Order Number</th>
+          <th>Product Name</th>
+          <th>Quantity Produced</th>
 
-          <th> unit_of_measure</th>
-          <th>date_time_of_production</th>
-          <th>production_line</th>
+          <th> Unit of Measure</th>
+          <th>Date Time of Production</th>
+          <th>Production Line</th>
 
-          <th>responsible_person</th>
-          <th>remarks</th>
+          <th>Responsible Person</th>
+          <th>Remarks</th>
           
                         
                        
@@ -97,7 +97,7 @@ const Create_pdf = () => {
       </table>
       </div>
      
-      <button onClick={Create_pdf}><img src={PDF} alt="pdf" width="30px" height="30px" style={{marginLeft:"-10px"}}/></button>
+      {/* <button onClick={Create_pdf}><img src={PDF} alt="pdf" width="30px" height="30px" style={{marginLeft:"-10px"}}/></button> */}
       </div>
       <div className='space'></div>
     </div>
